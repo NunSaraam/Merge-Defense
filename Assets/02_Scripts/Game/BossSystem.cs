@@ -20,7 +20,7 @@ namespace TowerDefense.Game
             };
 
             goldManager.AddGold(reward);
-            // augmentation UI CallBack
+            // TODO : augmentation UI CallBack
         }
     }
 }

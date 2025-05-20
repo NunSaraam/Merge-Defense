@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8974584182673343989}
   - component: {fileID: 95289590919385145}
   - component: {fileID: 6061136960327284392}
+  - component: {fileID: -5851497509783077061}
   m_Layer: 0
   m_Name: C_Goat
   m_TagString: Enemy
@@ -106,3 +107,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-5851497509783077061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3652003553634523450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60783abc1945ed140b2351c2610ca416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  attackDamage: 10
+  attackSpeed: 1
+  criticalChance: 0.1
+  criticalMultiplier: 2
+  attackRange: 2.5
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}

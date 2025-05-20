@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3505369573156171153}
   - component: {fileID: 4353197217535010119}
   - component: {fileID: 19527590847792769}
+  - component: {fileID: -9001973382704244106}
   m_Layer: 0
   m_Name: C_Penguin
   m_TagString: Enemy
@@ -106,3 +107,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-9001973382704244106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871939180948891314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60783abc1945ed140b2351c2610ca416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  attackDamage: 10
+  attackSpeed: 1
+  criticalChance: 0.1
+  criticalMultiplier: 2
+  attackRange: 2.5
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}

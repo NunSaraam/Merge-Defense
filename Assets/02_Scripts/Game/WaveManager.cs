@@ -11,6 +11,8 @@ namespace TowerDefense.Game
         private bool waveInProgress;
         private int currentWave = 1;
 
+        public int CurrentWave => currentWave;
+
         public delegate void WaveEvent(int wave);
         public event WaveEvent OnWaveStart;
         public event WaveEvent OnBossWave;
