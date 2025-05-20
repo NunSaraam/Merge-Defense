@@ -6,7 +6,7 @@ namespace TowerDefense.Player
     public class SummonManager : MonoBehaviour
     {
         [SerializeField] private GoldManager goldManager;
-        [SerializeField] private Transform summonParent;
+        [SerializeField] private Transform[] summonParent;
         [SerializeField] private GameObject[] commonTowerPrefabs;
         [SerializeField] private int summonStartCost = 20;
         [SerializeField] private int summonCostIncrease = 2;
@@ -25,7 +25,7 @@ namespace TowerDefense.Player
             goldManager.SpendGold(currentSummonCost);
 
             var randomPrefab = commonTowerPrefabs[Random.Range(0, commonTowerPrefabs.Length)];
-            var newTower = Instantiate(randomPrefab, summonParent); // summonParent Modified to Random Location
+            var newTower = Instantiate(randomPrefab, summonParent[Random.Range(0, summonParent.Length)]); // summonParent Modified to Random Location
             
             newTower.transform.localPosition = Vector3.zero;
 

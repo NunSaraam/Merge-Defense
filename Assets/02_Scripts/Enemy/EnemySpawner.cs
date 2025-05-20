@@ -5,7 +5,7 @@ namespace TowerDefense.Enemy
 {
     public class EnemySpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] private GameObject[] enemyPrefab;
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private int maxSpawnCount = 10;
         [SerializeField] private float spawnInterval = 1f;
@@ -30,7 +30,7 @@ namespace TowerDefense.Enemy
         {
             for (int i = 0; i < maxSpawnCount; i++)
             {
-                GameObject enemy = Instantiate(enemyPrefab);
+                GameObject enemy = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)]);
                 enemy.SetActive(false);
                 enemyPool.Enqueue(enemy);
             }
