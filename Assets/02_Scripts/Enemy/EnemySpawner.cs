@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TowerDefense.Game;
 
 namespace TowerDefense.Enemy
 {
@@ -16,6 +17,10 @@ namespace TowerDefense.Enemy
         private void Start()
         {
             InitializePool();
+
+            WaveManager waveManager = FindObjectOfType<WaveManager>();
+            if (waveManager != null)
+                waveManager.OnWaveStart += PrepareWave;
         }
 
         private void Update()
@@ -42,6 +47,13 @@ namespace TowerDefense.Enemy
             enemy.transform.position = spawnPoint.position;
             enemy.SetActive(true);
             lastSpawnTime = Time.time;
+        }
+
+        private void PrepareWave(int wave)
+        {
+            maxSpawnCount = 10 + (wave - 1) * 2;
+            spawnInterval = Mathf.Max(0.3f, 1.0f - (wave - 1) * 0.05f);
+            InitializePool();
         }
     }
 }
