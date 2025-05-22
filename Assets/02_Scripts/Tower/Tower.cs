@@ -1,22 +1,27 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace TowerDefense.Tower
 {
+    public enum TowerType { Common, Rare, Epic, Legendary, Mythical }
     public class Tower : MonoBehaviour
     {
-        [Header("Tower Stats")]
-        public int level = 1;
-        public float attackDamage = 10f;
-        public float attackSpeed = 1f; // per second
-        public float criticalChance = 0.1f; // 10%
-        public float criticalMultiplier = 2f;
+        public TowerDatabase towerDatabase;
 
-        [Header("Attack Settings")]
-        public float attackRange = 2.5f;
+        private TowerData currentTowerData;
+
+        private TowerType currentTowerType = TowerType.Common;
+
+        public string currentTowerLevel => currentTowerData.TowerName;
+
         public GameObject projectilePrefab;
         public Transform firePoint;
 
         private float attackCooldown;
+        private void Start()
+        {
+            currentTowerData = towerDatabase.GetTowersByType(currentTowerType)[Random.Range(0, towerDatabase.GetTowersByType(TowerType.Common).Count)];
+        }
 
         private void Update()
         {
@@ -27,9 +32,15 @@ namespace TowerDefense.Tower
                 if (target != null)
                 {
                     Attack(target);
-                    attackCooldown = 1f / attackSpeed;
+                    attackCooldown = 1f / currentTowerData.AttackSpeed;
                 }
             }
+        }
+
+        public void UpgradeTowerData()
+        {
+            currentTowerType += 1;
+            currentTowerData = towerDatabase.GetTowersByType(currentTowerType)[Random.Range(0, towerDatabase.GetTowersByType(currentTowerType).Count)];
         }
 
         private GameObject FindNearestEnemy()
@@ -41,7 +52,7 @@ namespace TowerDefense.Tower
             foreach (var enemy in enemies)
             {
                 float dist = Vector3.Distance(transform.position, enemy.transform.position);
-                if (dist < attackRange && dist < minDistance)
+                if (dist < currentTowerData.AttackRange && dist < minDistance)
                 {
                     nearest = enemy;
                     minDistance = dist;
@@ -53,10 +64,10 @@ namespace TowerDefense.Tower
 
         private void Attack(GameObject enemy)
         {
-            float damage = attackDamage;
-            if (Random.value < criticalChance)
+            float damage = currentTowerData.Damage;
+            if (Random.value < currentTowerData.CriticalChance)
             {
-                damage *= criticalMultiplier;
+                damage *= currentTowerData.CriticalMultiplier;
             }
 
             // Deal direct damage (or instantiate projectile in È®Àå)
@@ -64,15 +75,6 @@ namespace TowerDefense.Tower
             {
                 health.TakeDamage(damage);
             }
-        }
-
-        public void Upgrade()
-        {
-            level++;
-            attackDamage *= 1.5f;
-            attackSpeed += 0.2f;
-            criticalChance = Mathf.Min(criticalChance + 0.05f, 1f);
-            criticalMultiplier += 0.5f;
         }
     }
 }

@@ -6,9 +6,9 @@ namespace TowerDefense.Tower
     {
         public bool TryMerge(Tower a, Tower b)
         {
-            if (a.level == b.level)
+            if (a.currentTowerLevel == b.currentTowerLevel)
             {
-                a.Upgrade();
+                a.UpgradeTowerData();
                 Destroy(b.gameObject);
                 return true;
             }

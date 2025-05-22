@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1281732a99ab8684f891a38d96529179, type: 3}
+  m_Name: TowerDatabase
+  m_EditorClassIdentifier: 
+  commonTowers:
+  - {fileID: 11400000, guid: 78c25ea235eaa5c4a8d23aaed0eb749c, type: 2}
+  - {fileID: 11400000, guid: 597c2aef4e935064eb0bbab0ea619ff3, type: 2}
+  - {fileID: 11400000, guid: 0782550591efeab42aedf34e66e95059, type: 2}
+  - {fileID: 11400000, guid: 264c1b93645e7d34eb1e2d72f69fdb37, type: 2}
+  - {fileID: 11400000, guid: a3d48fbc58ad077428048a90a018262f, type: 2}
+  rareTowers:
+  - {fileID: 11400000, guid: 981b5d3bd989ef546bd9a56f8d9a87d1, type: 2}
+  - {fileID: 11400000, guid: 79d17d8264763a347810faacfe665449, type: 2}
+  - {fileID: 11400000, guid: c9520670f845b1243b38cb3f0b0c4640, type: 2}
+  - {fileID: 11400000, guid: 8d7ca264c6442fe43af557b4824334c9, type: 2}
+  - {fileID: 11400000, guid: bcd71629a24fdd84fa58824feb0aa33f, type: 2}
+  epicTowers: []
+  legendaryTowers: []
+  mythicalTowers: []
