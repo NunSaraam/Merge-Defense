@@ -6,13 +6,23 @@ namespace TowerDefense.Tower
     public enum TowerType { Common, Rare, Epic, Legendary, Mythical }
     public class Tower : MonoBehaviour
     {
-        public TowerDatabase towerDatabase;
+        private int towerID;
+
+        [SerializeField] private TowerDatabase towerDatabase;
+
+        // TODO : 타워 애니메이터, 이미지 각 등급마다 분류하기
+        [Header("TowerProperties")]
+        public RuntimeAnimatorController[] towerAnimators;
+        public Sprite[] towerImages;
+
+        private Animator towerAnimator;
+        private SpriteRenderer towerRenderer;
 
         private TowerData currentTowerData;
 
         private TowerType currentTowerType = TowerType.Common;
 
-        public string currentTowerLevel => currentTowerData.TowerName;
+        public string currentTowerName => currentTowerData.TowerName;
 
         public GameObject projectilePrefab;
         public Transform firePoint;
@@ -20,7 +30,13 @@ namespace TowerDefense.Tower
         private float attackCooldown;
         private void Start()
         {
-            currentTowerData = towerDatabase.GetTowersByType(currentTowerType)[Random.Range(0, towerDatabase.GetTowersByType(TowerType.Common).Count)];
+            towerID = Random.Range(0, towerDatabase.GetTowersByType(TowerType.Common).Count);
+            currentTowerData = towerDatabase.GetTowersByType(currentTowerType)[towerID];
+            towerAnimator = GetComponent<Animator>();
+            towerRenderer = GetComponent<SpriteRenderer>();
+            towerAnimator.runtimeAnimatorController = towerAnimators[towerID];
+            towerRenderer.sprite = towerImages[towerID];
+            attackCooldown = currentTowerData.AttackSpeed;
         }
 
         private void Update()
@@ -39,9 +55,24 @@ namespace TowerDefense.Tower
 
         public void UpgradeTowerData()
         {
+            if (currentTowerType >= TowerType.Mythical) return;
+
             currentTowerType += 1;
-            currentTowerData = towerDatabase.GetTowersByType(currentTowerType)[Random.Range(0, towerDatabase.GetTowersByType(currentTowerType).Count)];
+            int newTowerID = Random.Range(0, towerDatabase.GetTowersByType(currentTowerType).Count);
+            currentTowerData = towerDatabase.GetTowersByType(currentTowerType)[newTowerID];
+            towerID = newTowerID;
         }
+
+        /*
+         * 나중구현
+        private void UpdateTowerVisuals(int newID)
+        {
+            if (newID < towerAnimators.Length)
+                towerAnimator.runtimeAnimatorController = towerAnimators[newID].runtimeAnimatorController;
+            if (newID < towerImages.Length)
+                towerRenderer.sprite = towerImages[newID];
+        }
+        */
 
         private GameObject FindNearestEnemy()
         {
@@ -56,6 +87,10 @@ namespace TowerDefense.Tower
                 {
                     nearest = enemy;
                     minDistance = dist;
+                }
+                else
+                {
+                    Debug.Log("Not Set AttackRange or Something Wrong");
                 }
             }
 
