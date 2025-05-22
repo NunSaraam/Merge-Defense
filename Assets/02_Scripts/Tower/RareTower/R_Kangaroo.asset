@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Kangaroo
   towerGrade: Rare
-  attackRange: 0
+  attackRange: 1
   isLongDistance: 0
   damage: 13
   attackSpeed: 1

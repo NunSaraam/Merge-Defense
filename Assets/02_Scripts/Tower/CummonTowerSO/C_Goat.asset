@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Goat
   towerGrade: Common
-  attackRange: 0
+  attackRange: 1
   isLongDistance: 0
   damage: 7
   attackSpeed: 0

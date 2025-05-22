@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Bunny
   towerGrade: Common
-  attackRange: 0
+  attackRange: 4
   isLongDistance: 1
   damage: 4
   attackSpeed: 0

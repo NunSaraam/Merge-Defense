@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Panda
   towerGrade: Rare
-  attackRange: 0
+  attackRange: 2
   isLongDistance: 1
   damage: 13
   attackSpeed: 1

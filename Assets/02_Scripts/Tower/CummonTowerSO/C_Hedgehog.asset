@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Hedgehog
   towerGrade: Common
-  attackRange: 0
+  attackRange: 3
   isLongDistance: 1
   damage: 6
   attackSpeed: 0

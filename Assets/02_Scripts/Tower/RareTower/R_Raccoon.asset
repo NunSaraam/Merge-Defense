@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Raccoon
   towerGrade: Rare
-  attackRange: 0
+  attackRange: 1
   isLongDistance: 0
   damage: 10
   attackSpeed: 1
