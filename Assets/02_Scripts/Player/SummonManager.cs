@@ -9,7 +9,7 @@ namespace TowerDefense.Player
     {
         [SerializeField] private GoldManager goldManager;
         //[SerializeField] private 
-        [SerializeField] private GameObject[] commonTowerPrefabs;
+        [SerializeField] private GameObject commonTowerPrefab;
         [SerializeField] private Transform[] summonParent;
         [SerializeField] private int summonStartCost = 20;
         [SerializeField] private int summonCostIncrease = 2;
@@ -40,7 +40,7 @@ namespace TowerDefense.Player
             if (emptySlots.Count > 0)
             {
                 Transform selectedSlot = emptySlots[Random.Range(0, emptySlots.Count)];
-                var prefab = commonTowerPrefabs[Random.Range(0, commonTowerPrefabs.Length)];
+                var prefab = commonTowerPrefab;
                 Instantiate(prefab, selectedSlot.position, Quaternion.identity, selectedSlot);
 
                 goldManager.SpendGold(currentSummonCost);

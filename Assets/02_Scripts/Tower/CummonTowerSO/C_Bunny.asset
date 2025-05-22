@@ -17,6 +17,6 @@ MonoBehaviour:
   attackRange: 4
   isLongDistance: 1
   damage: 4
-  attackSpeed: 0
-  criticalChance: 0
-  criticalMultiplier: 0
+  attackSpeed: 1
+  criticalChance: 3
+  criticalMultiplier: 10

@@ -5376,12 +5376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldManager: {fileID: 2054147505}
-  commonTowerPrefabs:
-  - {fileID: 8828506776350196719, guid: 49e9a911d333a5e4ea84458f9a32b53e, type: 3}
-  - {fileID: 3652003553634523450, guid: 67f8538a66f88c446ae33856e4ab6e57, type: 3}
-  - {fileID: 768374370875477664, guid: f9ac2330b03e8f946a7c54d01b3d8967, type: 3}
-  - {fileID: 1871939180948891314, guid: 7418988f599990f478f03a84b3199bb8, type: 3}
-  - {fileID: 3904956432851439397, guid: 8bccd6c647f7bd141bf3c4e39808d9ed, type: 3}
+  commonTowerPrefab: {fileID: 858592605169356092, guid: e198a9920cb858b419a6764c31e20761, type: 3}
   summonParent:
   - {fileID: 1934604297}
   - {fileID: 1423720207}
