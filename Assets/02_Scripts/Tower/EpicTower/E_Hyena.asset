@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b81659adf1f4754fb0a5834c500d042, type: 3}
   m_Name: E_Hyena
   m_EditorClassIdentifier: 
-  towerName: Gorilla
-  towerGrade: Rare
-  attackRange: 0
+  towerName: Hyena
+  towerGrade: Epic
+  attackRange: 1
   isLongDistance: 0
-  damage: 20
-  attackSpeed: 1
-  criticalChance: 5
-  criticalMultiplier: 15
+  damage: 35
+  attackSpeed: 1.5
+  criticalChance: 8
+  criticalMultiplier: 30

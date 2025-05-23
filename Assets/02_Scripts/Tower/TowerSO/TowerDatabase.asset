@@ -24,6 +24,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9520670f845b1243b38cb3f0b0c4640, type: 2}
   - {fileID: 11400000, guid: 8d7ca264c6442fe43af557b4824334c9, type: 2}
   - {fileID: 11400000, guid: bcd71629a24fdd84fa58824feb0aa33f, type: 2}
-  epicTowers: []
-  legendaryTowers: []
-  mythicalTowers: []
+  epicTowers:
+  - {fileID: 11400000, guid: fac1f284e90564d4b9043b1996b2d1ff, type: 2}
+  - {fileID: 11400000, guid: 36109745a38dbfb4d91f8ff5b4243b5f, type: 2}
+  - {fileID: 11400000, guid: 7c0d25b407d9adc4c92086b2dbf64857, type: 2}
+  - {fileID: 11400000, guid: 7d027e53bc397b7479250865c89001c2, type: 2}
+  legendaryTowers:
+  - {fileID: 11400000, guid: b281a6bb2628cd24296708aff06b4985, type: 2}
+  - {fileID: 11400000, guid: 1c68af133145ab34780b076bf1f6c058, type: 2}
+  - {fileID: 11400000, guid: b693c878fedca8747a47b8a6c0712d2d, type: 2}
+  - {fileID: 11400000, guid: 758a7f7661f4ce847acd7435093f2eba, type: 2}
+  mythicalTowers:
+  - {fileID: 11400000, guid: f4a12ec26c272db48bc7a093b21f9008, type: 2}
+  - {fileID: 11400000, guid: 7bedc25041b91a24e88f22a9ef9b1335, type: 2}
+  - {fileID: 11400000, guid: 700bb6f01a58b0a4797ca4755b6cdf96, type: 2}

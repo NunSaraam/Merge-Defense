@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: L_Lion
   m_EditorClassIdentifier: 
   towerName: Lion
-  towerGrade: Rare
-  attackRange: 0
+  towerGrade: Legendary
+  attackRange: 1
   isLongDistance: 1
-  damage: 13
-  attackSpeed: 1
-  criticalChance: 5
-  criticalMultiplier: 15
+  damage: 70
+  attackSpeed: 1.5
+  criticalChance: 10
+  criticalMultiplier: 60

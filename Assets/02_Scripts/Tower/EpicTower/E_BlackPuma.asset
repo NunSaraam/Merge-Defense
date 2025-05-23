@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b81659adf1f4754fb0a5834c500d042, type: 3}
   m_Name: E_BlackPuma
   m_EditorClassIdentifier: 
-  towerName: Flamingo
-  towerGrade: Rare
-  attackRange: 0
+  towerName: BlackPuma
+  towerGrade: Epic
+  attackRange: 1
   isLongDistance: 1
-  damage: 7
-  attackSpeed: 1.25
-  criticalChance: 4
-  criticalMultiplier: 15
+  damage: 35
+  attackSpeed: 1.75
+  criticalChance: 6
+  criticalMultiplier: 30

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Crocodile
   towerGrade: Rare
-  attackRange: 0
-  isLongDistance: 0
-  damage: 13
-  attackSpeed: 1
-  criticalChance: 5
-  criticalMultiplier: 15
+  attackRange: 4
+  isLongDistance: 1
+  damage: 25
+  attackSpeed: 1.5
+  criticalChance: 6
+  criticalMultiplier: 25
