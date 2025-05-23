@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b81659adf1f4754fb0a5834c500d042, type: 3}
-  m_Name: R_Kangaroo
+  m_Name: M_Pegasus
   m_EditorClassIdentifier: 
-  towerName: Kangaroo
-  towerGrade: Rare
-  attackRange: 0
-  isLongDistance: 0
-  damage: 13
-  attackSpeed: 1
-  criticalChance: 5
-  criticalMultiplier: 15
+  towerName: Pegasus
+  towerGrade: Mythical
+  attackRange: 4
+  isLongDistance: 1
+  damage: 300
+  attackSpeed: 3
+  criticalChance: 20
+  criticalMultiplier: 150
