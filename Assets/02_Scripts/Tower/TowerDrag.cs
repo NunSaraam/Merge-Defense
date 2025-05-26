@@ -33,6 +33,19 @@ namespace TowerDefense.Tower
         private void OnMouseUp()
         {
             isDragging = false;
+
+            Collider2D[] hits = Physics2D.OverlapPointAll(transform.position);
+            foreach (var hit in hits)
+            {
+                if (hit.gameObject != gameObject && hit.TryGetComponent(out Tower otherTower))
+                {
+                    if (TryGetComponent(out Tower thisTower) &&
+                        FindObjectOfType<TowerMerge>().TryMerge(thisTower, otherTower))
+                    {
+                        return;
+                    }
+                }
+            }
         }
 
         private Vector3 GetMouseWorldPosition()

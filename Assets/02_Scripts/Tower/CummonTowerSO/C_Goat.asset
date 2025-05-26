@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: C_Goat
   m_EditorClassIdentifier: 
   towerName: Goat
-  towerGrade: Common
+  towerGrade: 0
+  towerSprite: {fileID: 913460851, guid: f387e8e9c5042a64885130e73c3d4382, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 2baddb44b5c79b94ab7d38f4459fa2ab, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 7

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: C_Turtle
   m_EditorClassIdentifier: 
   towerName: Turtle
-  towerGrade: Common
+  towerGrade: 0
+  towerSprite: {fileID: 1885616104, guid: 8022f1e7fa0c0b24eacee0848e083062, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 0d39380175ed1ff4da97395d482c5e07, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 7

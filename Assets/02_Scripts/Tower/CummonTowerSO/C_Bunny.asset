@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: C_Bunny
   m_EditorClassIdentifier: 
   towerName: Bunny
-  towerGrade: Common
+  towerGrade: 0
+  towerSprite: {fileID: -1654857495, guid: dc5ce18a7aac3604cb72b8121a640ed9, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 89ff898c377bfd1419e0cc8ab2446925, type: 2}
   attackRange: 4
   isLongDistance: 1
   damage: 4

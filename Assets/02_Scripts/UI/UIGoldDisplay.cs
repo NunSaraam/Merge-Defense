@@ -13,7 +13,7 @@ namespace TowerDefense.UI
         private void OnEnable()
         {
             goldManager.OnGoldChanged += UpdateGoldText;
-            UpdateGoldText(goldManager.CurrentGold); // ÃÊ±â°ª Ç¥½Ã
+            UpdateGoldText(goldManager.CurrentGold);
         }
 
         private void OnDisable()
@@ -23,7 +23,7 @@ namespace TowerDefense.UI
 
         private void UpdateGoldText(int gold)
         {
-            goldText.text = $"ÇöÀç °ñµå : {gold}";
+            goldText.text = $"í˜„ìž¬ ê³¨ë“œ : {gold}";
         }
     }
 }

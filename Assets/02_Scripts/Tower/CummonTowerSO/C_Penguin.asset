@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: C_Penguin
   m_EditorClassIdentifier: 
   towerName: Penguin
-  towerGrade: Common
+  towerGrade: 0
+  towerSprite: {fileID: 1533347143, guid: bf39109ff3124684ba6658b0094e20d6, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 5dad88a8315664040bb7e15782fd0613, type: 2}
   attackRange: 4
   isLongDistance: 1
   damage: 4

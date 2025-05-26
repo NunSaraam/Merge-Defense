@@ -25,7 +25,7 @@ namespace TowerDefense.UI
 
         private void UpdateButtonCostUI()
         {
-            summonCostText.text = $"Å¸¿ö¼ÒÈ¯ : {summonManager.CurrentSummonCost}";
+            summonCostText.text = $"íƒ€ì›Œì†Œí™˜ : {summonManager.CurrentSummonCost}";
         }
     }
 }

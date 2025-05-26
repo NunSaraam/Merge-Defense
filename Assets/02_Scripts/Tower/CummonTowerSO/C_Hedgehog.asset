@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: C_Hedgehog
   m_EditorClassIdentifier: 
   towerName: Hedgehog
-  towerGrade: Common
+  towerGrade: 0
+  towerSprite: {fileID: -814225683, guid: 0b6baa1fc9891ac4ca73ba48ea2662e4, type: 3}
+  towerAnimator: {fileID: 9100000, guid: e779ec6c990fa5b4b9d7e947a3de8b74, type: 2}
   attackRange: 3
   isLongDistance: 1
   damage: 6
