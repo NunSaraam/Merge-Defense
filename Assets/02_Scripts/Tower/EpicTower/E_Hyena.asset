@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: E_Hyena
   m_EditorClassIdentifier: 
   towerName: Hyena
-  towerGrade: Epic
+  towerGrade: 0
+  towerSprite: {fileID: -1207616038, guid: bbb179210b50f1c46b6963b4f978b829, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 6aded2f1710d18d48991867fd9b0dec3, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 35

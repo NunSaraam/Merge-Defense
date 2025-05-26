@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: R_Flamingo
   m_EditorClassIdentifier: 
   towerName: Flamingo
-  towerGrade: Rare
+  towerGrade: 0
+  towerSprite: {fileID: -953083028, guid: 5db550e398a13c141a6eeb5421d57d59, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 735cbf4db2040c54dab208728c867bf0, type: 2}
   attackRange: 4
   isLongDistance: 1
   damage: 7

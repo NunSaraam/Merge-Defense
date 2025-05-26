@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: R_Gorilla
   m_EditorClassIdentifier: 
   towerName: Gorilla
-  towerGrade: Rare
+  towerGrade: 0
+  towerSprite: {fileID: -170833326, guid: 36486cb06b5cd8e4abef1d54c77dd903, type: 3}
+  towerAnimator: {fileID: 9100000, guid: d84291ac96f904d4d9cfdf844958c317, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 20

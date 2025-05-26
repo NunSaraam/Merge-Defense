@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: R_Raccoon
   m_EditorClassIdentifier: 
   towerName: Raccoon
-  towerGrade: Rare
+  towerGrade: 0
+  towerSprite: {fileID: 2005073973, guid: aafeae34d6ebf864c99b29303e5fa29c, type: 3}
+  towerAnimator: {fileID: 9100000, guid: ffcecb1800b886b4980d7c90e419c69f, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 10

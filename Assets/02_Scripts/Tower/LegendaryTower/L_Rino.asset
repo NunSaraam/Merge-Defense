@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: L_Rino
   m_EditorClassIdentifier: 
   towerName: Rino
-  towerGrade: Legendary
+  towerGrade: 0
+  towerSprite: {fileID: 807013539, guid: 93ea976119bcba44792f8618cd3c5839, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 2e2fb69973e8f55459e04b8f1b2cd75e, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 90

@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: R_Kangaroo
   m_EditorClassIdentifier: 
   towerName: Kangaroo
-  towerGrade: Rare
+  towerGrade: 0
+  towerSprite: {fileID: -2063770262, guid: b5621735527c12949b3e00f8d4e7a584, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 93eef33b1ae5cc249afe996dee8b3fd7, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 13

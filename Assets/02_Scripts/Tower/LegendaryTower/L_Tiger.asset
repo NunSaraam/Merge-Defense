@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: L_Tiger
   m_EditorClassIdentifier: 
   towerName: Tiger
-  towerGrade: Legendary
+  towerGrade: 0
+  towerSprite: {fileID: -1200556726, guid: a1215c650744fef4594e7e027d141ac1, type: 3}
+  towerAnimator: {fileID: 9100000, guid: d23f15622d5215441aacafb66e09eb54, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 70

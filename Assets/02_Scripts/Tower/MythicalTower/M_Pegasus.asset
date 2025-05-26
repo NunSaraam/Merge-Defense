@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: M_Pegasus
   m_EditorClassIdentifier: 
   towerName: Pegasus
-  towerGrade: Mythical
+  towerGrade: 0
+  towerSprite: {fileID: 21300000, guid: d86663869ecda4d46929d3a85388374a, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 1241c25c83664ae40a59fa031cf35260, type: 2}
   attackRange: 4
   isLongDistance: 1
   damage: 300
