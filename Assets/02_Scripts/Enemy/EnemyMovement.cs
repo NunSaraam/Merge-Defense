@@ -2,36 +2,31 @@ using UnityEngine;
 
 namespace TowerDefense.Enemy
 {
-    public class EnemyMovement : MonoBehaviour
+    public class EnemyPathFollower : MonoBehaviour
     {
-        [SerializeField] private float speed = 5f;
+        [SerializeField] private float moveSpeed = 2.5f;
+        [SerializeField] private Transform[] pathPoints;
+
+        private int currentIndex = 0;
+
+        public void SetPath(Transform[] path)
+        {
+            pathPoints = path;
+            currentIndex = 0;
+        }
 
         private void Update()
         {
-            Move();
-        }
+            if (pathPoints == null || pathPoints.Length == 0 || currentIndex >= pathPoints.Length) return;
 
-        private void Move()
-        {
-            transform.Translate(-transform.right * speed * Time.deltaTime);
-        }
+            Transform target = pathPoints[currentIndex];
+            Vector3 dir = (target.position - transform.position).normalized;
+            transform.position += dir * moveSpeed * Time.deltaTime;
 
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            RotateOnTurnPoint(collision);
-        }
-
-        private void RotateOnTurnPoint(Collider2D collision)
-        {
-            if (collision.CompareTag("Left"))
-                Rotate(45f);
-            else if (collision.CompareTag("Right"))
-                Rotate(-45f);
-        }
-
-        private void Rotate(float angle)
-        {
-            transform.rotation = Quaternion.Euler(0f, 0f, angle) * transform.rotation;
+            if (Vector3.Distance(transform.position, target.position) < 0.1f)
+            {
+                currentIndex++;
+            }
         }
     }
 }

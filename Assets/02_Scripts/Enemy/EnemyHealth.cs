@@ -29,7 +29,6 @@ namespace TowerDefense.Enemy
         private void Die()
         {
             Destroy(gameObject);
-            // TODO : ∞ÒµÂ »πµÊ ¿Ã∫•∆Æ µÓ
         }
     }
 }

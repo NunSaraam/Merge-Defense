@@ -7,11 +7,14 @@ namespace TowerDefense.Tower
     {
         private Vector3 offset;
         private Camera mainCamera;
-        private bool isDragging = false;
+        private Tower currentTower;
+
+        public bool IsDragging { get; private set; } = false;
 
         private void Awake()
         {
             mainCamera = Camera.main;
+            currentTower = GetComponent<Tower>();
         }
 
         private void OnMouseDown()
@@ -19,12 +22,12 @@ namespace TowerDefense.Tower
             if (EventSystem.current.IsPointerOverGameObject()) return;
 
             offset = transform.position - GetMouseWorldPosition();
-            isDragging = true;
+            IsDragging = true;
         }
 
         private void OnMouseDrag()
         {
-            if (!isDragging) return;
+            if (!IsDragging) return;
             Vector3 newPosition = GetMouseWorldPosition() + offset;
             newPosition.z = transform.position.z;
             transform.position = newPosition;
@@ -32,19 +35,22 @@ namespace TowerDefense.Tower
 
         private void OnMouseUp()
         {
-            isDragging = false;
+            IsDragging = false;
 
-            Collider2D[] hits = Physics2D.OverlapPointAll(transform.position);
-            foreach (var hit in hits)
+            var group = FindObjectOfType<TowerSlotGroup>();
+            if (group == null) return;
+
+            if (group.HasSameTowerInSlot(transform.position, currentTower, out Tower other, out Transform targetSlot))
             {
-                if (hit.gameObject != gameObject && hit.TryGetComponent(out Tower otherTower))
-                {
-                    if (TryGetComponent(out Tower thisTower) &&
-                        FindObjectOfType<TowerMerge>().TryMerge(thisTower, otherTower))
-                    {
-                        return;
-                    }
-                }
+                FindObjectOfType<TowerMergeManager>().Merge(currentTower, other, targetSlot);
+                return;
+            }
+
+            Transform emptySlot = group.GetNearestEmptySlot(transform.position);
+            if (emptySlot != null)
+            {
+                transform.position = emptySlot.position;
+                transform.SetParent(emptySlot);
             }
         }
 

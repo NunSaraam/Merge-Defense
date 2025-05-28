@@ -10,6 +10,7 @@ namespace TowerDefense.Enemy
         [SerializeField] private Transform spawnPoint;
         [SerializeField] private int maxSpawnCount = 10;
         [SerializeField] private float spawnInterval = 1f;
+        [SerializeField] private Transform[] pathPoints;
 
         private Queue<GameObject> enemyPool = new();
         private float lastSpawnTime;
@@ -46,6 +47,7 @@ namespace TowerDefense.Enemy
             GameObject enemy = enemyPool.Dequeue();
             enemy.transform.position = spawnPoint.position;
             enemy.SetActive(true);
+            enemy.GetComponent<EnemyPathFollower>().SetPath(pathPoints);
             lastSpawnTime = Time.time;
         }
 
