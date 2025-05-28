@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6188369750858314643}
   - component: {fileID: -3221475509348037817}
   - component: {fileID: 4325119839030763528}
-  - component: {fileID: -7678990510630302127}
+  - component: {fileID: 2132346414812714868}
   - component: {fileID: -7157272776268983329}
   m_Layer: 0
   m_Name: TrashEnemy
@@ -160,7 +160,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 2
---- !u!114 &-7678990510630302127
+--- !u!114 &2132346414812714868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,3 +185,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25311eaca68719b468c4446b8d688c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseHealth: 50

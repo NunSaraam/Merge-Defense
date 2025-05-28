@@ -35,4 +35,10 @@ public class TowerData : ScriptableObject
 
     [SerializeField] private float criticalMultiplier;
     public float CriticalMultiplier => criticalMultiplier * 0.01f;
+
+    [SerializeField] private GameObject meleeEffectPrefab;
+    public GameObject MeleeEffectPrefab => meleeEffectPrefab;
+
+    [SerializeField] private GameObject rangedEffectPrefab;
+    public GameObject RangedEffectPrefab => rangedEffectPrefab;
 }

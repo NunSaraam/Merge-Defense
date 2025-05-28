@@ -10,8 +10,13 @@ namespace TowerDefense.Tower
 
         [SerializeField] private TowerDatabase towerDatabase;
 
-        public GameObject projectilePrefab;
-        public Transform firePoint;
+        // Only Test
+        [SerializeField] private bool useDebugEffects = true;
+        [SerializeField] private GameObject debugMeleeEffectPrefab;
+        [SerializeField] private GameObject debugRangedEffectPrefab;
+
+
+        [SerializeField] private Transform firePoint;
 
         private TowerData currentTowerData;
         private TowerType currentTowerType = TowerType.Common;
@@ -20,6 +25,8 @@ namespace TowerDefense.Tower
         private SpriteRenderer towerRenderer;
 
         private float attackCooldown;
+
+        private float critBonus = 0f;
 
         public TowerType CurrentType => currentTowerType;
         public TowerData GetCurrentData() => currentTowerData;
@@ -41,10 +48,12 @@ namespace TowerDefense.Tower
 
         private void Update()
         {
+            if (TryGetComponent(out TowerDrag drag) && drag.IsDragging) return;
+
             attackCooldown -= Time.deltaTime;
             if (attackCooldown <= 0f)
             {
-                var target = FindNearestEnemy();
+                var target = FindNearestEnemyInRange();
                 if (target != null)
                 {
                     Attack(target);
@@ -66,19 +75,23 @@ namespace TowerDefense.Tower
             towerAnimator.runtimeAnimatorController = currentTowerData.TowerAnimator;
         }
 
-        private GameObject FindNearestEnemy()
+        private GameObject FindNearestEnemyInRange()
         {
+            float pixelPerUnit = 100f;
+            float pixelDistance = currentTowerData.AttackRange * 128f;
+            float worldRange = pixelDistance / pixelPerUnit;
+
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
             GameObject nearest = null;
-            float minDistance = float.MaxValue;
+            float closest = float.MaxValue;
 
             foreach (var enemy in enemies)
             {
                 float dist = Vector3.Distance(transform.position, enemy.transform.position);
-                if (dist < currentTowerData.AttackRange && dist < minDistance)
+                if (dist < worldRange && dist < closest)
                 {
+                    closest = dist;
                     nearest = enemy;
-                    minDistance = dist;
                 }
             }
 
@@ -87,15 +100,58 @@ namespace TowerDefense.Tower
 
         private void Attack(GameObject enemy)
         {
-            float damage = currentTowerData.Damage;
-            if (Random.value < currentTowerData.CriticalChance)
+            if (currentTowerData.IsLongDistance)
             {
-                damage *= currentTowerData.CriticalMultiplier;
+                LaunchProjectile(enemy);
             }
-
-            if (enemy.TryGetComponent(out Enemy.EnemyHealth health))
+            else
             {
+                MeleeAttack(enemy);
+            }
+        }
+        private void MeleeAttack(GameObject target)
+        {
+            GameObject prefab = useDebugEffects ? debugMeleeEffectPrefab : currentTowerData.MeleeEffectPrefab;
+            if (prefab == null || target == null) return;
+
+            Instantiate(prefab, target.transform.position, Quaternion.identity);
+
+            if (target.TryGetComponent(out Enemy.EnemyHealth health))
+            {
+                float damage = GetDamage();
                 health.TakeDamage(damage);
+            }
+        }
+
+        private void LaunchProjectile(GameObject target)
+        {
+            GameObject prefab = useDebugEffects ? debugRangedEffectPrefab : currentTowerData.RangedEffectPrefab;
+            if (prefab == null) return;
+
+            GameObject projectile = Instantiate(prefab, firePoint.position, Quaternion.identity);
+            if (projectile.TryGetComponent(out Projectile proj))
+            {
+                proj.Init(target.transform, GetDamage());
+            }
+        }
+
+        private float GetDamage()
+        {
+            float baseCrit = currentTowerData.CriticalChance;
+            float totalCritChance = Mathf.Clamp01(baseCrit + critBonus);
+            bool isCrit = Random.value < totalCritChance;
+
+            if (isCrit)
+            {
+                critBonus = 0f;
+                float multiplier = 1f + currentTowerData.CriticalMultiplier;
+                return currentTowerData.Damage * multiplier;
+            }
+            else
+            {
+                float gain = baseCrit * 0.1f;
+                critBonus += gain;
+                return currentTowerData.Damage;
             }
         }
     }
