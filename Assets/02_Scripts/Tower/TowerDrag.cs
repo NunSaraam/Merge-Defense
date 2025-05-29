@@ -31,6 +31,16 @@ namespace TowerDefense.Tower
             Vector3 newPosition = GetMouseWorldPosition() + offset;
             newPosition.z = transform.position.z;
             transform.position = newPosition;
+
+            var group = FindObjectOfType<TowerSlotGroup>();
+            if (group != null)
+            {
+                Transform nearest = group.GetNearestEmptySlot(transform.position);
+                if (nearest != null)
+                {
+                    group.HighlightSlot(nearest);
+                }
+            }
         }
 
         private void OnMouseUp()
@@ -40,10 +50,15 @@ namespace TowerDefense.Tower
             var group = FindObjectOfType<TowerSlotGroup>();
             if (group == null) return;
 
-            if (group.HasSameTowerInSlot(transform.position, currentTower, out Tower other, out Transform targetSlot))
+            group.HighlightSlot(null);
+
+            if (group.HasSameTowerInSlot(transform.position, currentTower, out Tower match, out Transform matchedSlot))
             {
-                FindObjectOfType<TowerMergeManager>().Merge(currentTower, other, targetSlot);
-                return;
+                if (currentTower.CurrentType < TowerType.Mythical)
+                {
+                    FindObjectOfType<TowerMergeManager>().Merge(currentTower, match, matchedSlot);
+                    return;
+                }
             }
 
             Transform emptySlot = group.GetNearestEmptySlot(transform.position);
@@ -51,6 +66,10 @@ namespace TowerDefense.Tower
             {
                 transform.position = emptySlot.position;
                 transform.SetParent(emptySlot);
+            }
+            else
+            {
+                transform.position = transform.parent.position;
             }
         }
 

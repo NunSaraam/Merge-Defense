@@ -1,19 +1,19 @@
 using UnityEngine;
 using TowerDefense.Game;
+using TowerDefense.Player;
 
 namespace TowerDefense.Enemy
 {
     public class EnemyHealth : MonoBehaviour
     {
-        [SerializeField] private float baseHealth = 50f;
-        private float currentHealth;
+        private float baseHealth = 50;
+        [SerializeField] private float currentHealth;
         private WaveManager waveManager;
 
         private void Start()
         {
-            waveManager = FindObjectOfType<WaveManager>();
-            int wave = waveManager?.CurrentWave ?? 1;
-            currentHealth = baseHealth + (wave - 1) * 25f;
+            var waveData = FindObjectOfType<WaveManager>()?.CurrentWaveData;
+            currentHealth = waveData != null ? waveData.EnemyHealth : baseHealth;
         }
 
         public void TakeDamage(float amount)
@@ -28,6 +28,9 @@ namespace TowerDefense.Enemy
 
         private void Die()
         {
+            var gold = FindObjectOfType<WaveManager>()?.CurrentWaveData.EnemyGoldDrop ?? 0;
+            FindObjectOfType<GoldManager>()?.AddGold((int)gold);
+            FindObjectOfType<WaveManager>()?.NotifyEnemyKilled();
             Destroy(gameObject);
         }
     }

@@ -8,33 +8,38 @@ namespace TowerDefense.Enemy
     {
         [SerializeField] private GameObject[] enemyPrefab;
         [SerializeField] private Transform spawnPoint;
-        [SerializeField] private int maxSpawnCount = 10;
         [SerializeField] private float spawnInterval = 1f;
         [SerializeField] private Transform[] pathPoints;
+        [SerializeField] private int currentSpawnCount;
 
         private Queue<GameObject> enemyPool = new();
         private float lastSpawnTime;
 
         private void Start()
         {
-            InitializePool();
-
             WaveManager waveManager = FindObjectOfType<WaveManager>();
             if (waveManager != null)
+            {
                 waveManager.OnWaveStart += PrepareWave;
+                var waveData = waveManager.CurrentWaveData;
+                if (waveData != null)
+                {
+                    InitializePool(waveData.EnemyCount);
+                }
+            }
         }
 
         private void Update()
         {
             if (Time.time >= lastSpawnTime + spawnInterval && enemyPool.Count > 0)
-            {
                 SpawnEnemy();
-            }
         }
 
-        private void InitializePool()
+        private void InitializePool(int count)
         {
-            for (int i = 0; i < maxSpawnCount; i++)
+            enemyPool.Clear();
+            currentSpawnCount = count;
+            for (int i = 0; i < count; i++)
             {
                 GameObject enemy = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Length)]);
                 enemy.SetActive(false);
@@ -47,15 +52,17 @@ namespace TowerDefense.Enemy
             GameObject enemy = enemyPool.Dequeue();
             enemy.transform.position = spawnPoint.position;
             enemy.SetActive(true);
-            enemy.GetComponent<EnemyPathFollower>().SetPath(pathPoints);
+            enemy.GetComponent<EnemyMovement>().SetPath(pathPoints);
             lastSpawnTime = Time.time;
         }
 
         private void PrepareWave(int wave)
         {
-            maxSpawnCount = 10 + (wave - 1) * 2;
-            spawnInterval = Mathf.Max(0.3f, 1.0f - (wave - 1) * 0.05f);
-            InitializePool();
+            var waveData = FindObjectOfType<WaveManager>()?.CurrentWaveData;
+            if (waveData == null) return;
+            {
+                InitializePool(waveData.EnemyCount);
+            }
         }
     }
 }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a2e12175578194498e0ff88d779dcd, type: 3}
+  m_Name: WaveDatabase
+  m_EditorClassIdentifier: 
+  waveDataList:
+  - {fileID: 11400000, guid: 7ee6ef2e6af1eeb4abe53f301bf14be0, type: 2}
+  - {fileID: 11400000, guid: 82907ce30097dd942a8f7a3e105eb83d, type: 2}
+  - {fileID: 11400000, guid: 5cd1ea8eb7e44134f921a9fd63ef5515, type: 2}
+  - {fileID: 11400000, guid: c514c3b6e12807745a9b79d13b0cbd10, type: 2}
+  - {fileID: 11400000, guid: 9242bf7e6f775bc4b9b0563cdfc8961f, type: 2}
+  - {fileID: 11400000, guid: 3a7a07897fe0b684da2f986d40432e96, type: 2}
+  - {fileID: 11400000, guid: cf8662ec115abd7418bc59b66014bac9, type: 2}
+  - {fileID: 11400000, guid: e33de0a6e3baf2a49b9c404e1c5a20f2, type: 2}
+  - {fileID: 11400000, guid: 2045eb284d765f849a6cfc609e2cf8a5, type: 2}
+  - {fileID: 11400000, guid: 78dfa3817940d2c44b8bf028f9e623c1, type: 2}

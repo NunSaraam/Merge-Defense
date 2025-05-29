@@ -41,7 +41,7 @@ namespace TowerDefense.Player
             {
                 Transform selectedSlot = emptySlots[Random.Range(0, emptySlots.Count)];
                 var prefab = commonTowerPrefab;
-                Instantiate(prefab, selectedSlot.position, Quaternion.identity, selectedSlot);
+                Instantiate(prefab, new Vector3(selectedSlot.position.x, selectedSlot.position.y, selectedSlot.position.z - 1), Quaternion.identity, selectedSlot);
 
                 goldManager.SpendGold(currentSummonCost);
                 currentSummonCost += summonCostIncrease;

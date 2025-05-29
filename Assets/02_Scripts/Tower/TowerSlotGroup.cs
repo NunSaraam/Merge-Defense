@@ -13,6 +13,23 @@ namespace TowerDefense.Tower
             foreach (Transform child in transform)
             {
                 slotTransforms.Add(child);
+                SetSlotAlpha(child, 0.4f);
+            }
+        }
+
+        public void HighlightSlot(Transform slot)
+        {
+            foreach (var s in slotTransforms)
+                SetSlotAlpha(s, s == slot ? 1f : 0.4f);
+        }
+
+        private void SetSlotAlpha(Transform slot, float alpha)
+        {
+            if (slot.TryGetComponent(out SpriteRenderer sr))
+            {
+                Color color = sr.color;
+                color.a = alpha;
+                sr.color = color;
             }
         }
 

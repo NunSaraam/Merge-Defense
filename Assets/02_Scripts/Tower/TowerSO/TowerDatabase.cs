@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TowerDefense.Tower;
 
-[CreateAssetMenu(fileName = "TowerDatabase", menuName = "Tower/Tower Database")]
+[CreateAssetMenu(fileName = "TowerDatabase", menuName = "Tower/TowerDatabase")]
 public class TowerDatabase : ScriptableObject
 {
     public List<TowerData> commonTowers;

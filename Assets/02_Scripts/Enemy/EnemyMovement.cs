@@ -1,13 +1,20 @@
+using TowerDefense.Game;
 using UnityEngine;
 
 namespace TowerDefense.Enemy
 {
-    public class EnemyPathFollower : MonoBehaviour
+    public class EnemyMovement : MonoBehaviour
     {
-        [SerializeField] private float moveSpeed = 2.5f;
-        [SerializeField] private Transform[] pathPoints;
+        private float moveSpeed = 2f;
+        private Transform[] pathPoints;
 
         private int currentIndex = 0;
+
+        private void Start()
+        {
+            var waveData = FindObjectOfType<WaveManager>()?.CurrentWaveData;
+            moveSpeed = waveData != null ? waveData.EnemyMovementSpeed : moveSpeed;
+        }
 
         public void SetPath(Transform[] path)
         {
@@ -17,15 +24,19 @@ namespace TowerDefense.Enemy
 
         private void Update()
         {
-            if (pathPoints == null || pathPoints.Length == 0 || currentIndex >= pathPoints.Length) return;
+            if (pathPoints == null || currentIndex >= pathPoints.Length) return;
 
             Transform target = pathPoints[currentIndex];
-            Vector3 dir = (target.position - transform.position).normalized;
-            transform.position += dir * moveSpeed * Time.deltaTime;
+            Vector3 direction = (target.position - transform.position).normalized;
+            transform.position += direction * moveSpeed * Time.deltaTime;
 
             if (Vector3.Distance(transform.position, target.position) < 0.1f)
             {
                 currentIndex++;
+                if (currentIndex >= pathPoints.Length)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

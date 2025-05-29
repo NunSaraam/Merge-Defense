@@ -1,45 +1,42 @@
 using UnityEngine;
+using TMPro;
 
 namespace TowerDefense.Game
 {
     public class WaveManager : MonoBehaviour
     {
-        [SerializeField] private float waveDuration = 20f;
+        [SerializeField] private WaveDatabase waveDatabase;
         [SerializeField] private float delayBetweenWaves = 5f;
 
-        private float currentWaveTime;
-        private bool waveInProgress;
-        private int currentWave = 1;
+        [SerializeField] private TMP_Text currentWavePrint;
+        [SerializeField] private TMP_Text currentAliveEnemies;
 
-        public int CurrentWave => currentWave;
+        private int currentWave = 0;
+        [SerializeField] private int aliveEnemies = 0;
+
+        public WaveData CurrentWaveData => waveDatabase.GetWaveData(currentWave);
 
         public delegate void WaveEvent(int wave);
         public event WaveEvent OnWaveStart;
-        public event WaveEvent OnBossWave;
 
-        private void Update()
-        {
-            if (waveInProgress)
-            {
-                currentWaveTime -= Time.deltaTime;
-                if (currentWaveTime <= 0f)
-                {
-                    waveInProgress = false;
-                    Invoke(nameof(StartNextWave), delayBetweenWaves);
-                }
-            }
-        }
+        private void Start() => StartNextWave();
 
         private void StartNextWave()
         {
             currentWave++;
-            currentWaveTime = waveDuration;
-            waveInProgress = true;
+            aliveEnemies = CurrentWaveData.EnemyCount;
+            currentWavePrint.text = $"현재 웨이브 : {CurrentWaveData.WaveNumber}";
+            currentAliveEnemies.text = $"남은 적 수 : {aliveEnemies}";
             OnWaveStart?.Invoke(currentWave);
+        }
 
-            if (currentWave % 5 == 0)
+        public void NotifyEnemyKilled()
+        {
+            aliveEnemies--;
+            currentAliveEnemies.text = $"남은 적 수 : {aliveEnemies}";
+            if (aliveEnemies <= 0)
             {
-                OnBossWave?.Invoke(currentWave);
+                Invoke(nameof(StartNextWave), delayBetweenWaves);
             }
         }
     }
