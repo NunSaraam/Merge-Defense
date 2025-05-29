@@ -13,8 +13,9 @@ namespace TowerDefense.Game
 
         private int currentWave = 0;
         [SerializeField] private int aliveEnemies = 0;
-
-        public WaveData CurrentWaveData => waveDatabase.GetWaveData(currentWave);
+        public int CurrentWave => currentWave;
+        
+        public WaveData CurrentWaveData;
 
         public delegate void WaveEvent(int wave);
         public event WaveEvent OnWaveStart;
@@ -24,6 +25,7 @@ namespace TowerDefense.Game
         private void StartNextWave()
         {
             currentWave++;
+            CurrentWaveData = waveDatabase.GetWaveData(currentWave);
             aliveEnemies = CurrentWaveData.EnemyCount;
             currentWavePrint.text = $"현재 웨이브 : {CurrentWaveData.WaveNumber}";
             currentAliveEnemies.text = $"남은 적 수 : {aliveEnemies}";
