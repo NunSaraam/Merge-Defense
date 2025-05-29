@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1efb512fcef5a414aa81adff2fa6fdd6, type: 3}
   m_Name: WaveData16
   m_EditorClassIdentifier: 
-  waveNumber: 6
-  enemyCount: 100
-  enemyHealth: 100
+  waveNumber: 16
+  enemyCount: 300
+  enemyHealth: 1000
   enemyMovementSpeed: 2
-  enemyGoldDrop: 1.5
+  enemyGoldDrop: 2
   isBossWave: 0
