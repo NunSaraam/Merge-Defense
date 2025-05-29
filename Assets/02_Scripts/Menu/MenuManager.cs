@@ -14,14 +14,18 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene(gameStart);
     }
     
-    public void Maingo()
+    public void Maingo() // 메인 고 이지랄
     {
         SceneManager.LoadScene("Mainmenu");
     }
 
     public void ExitButton()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 
 }

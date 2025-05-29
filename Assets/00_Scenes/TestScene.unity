@@ -4921,6 +4921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1756802594}
   - component: {fileID: 1756802593}
+  - component: {fileID: 1756802595}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4956,6 +4957,7 @@ MonoBehaviour:
   - {fileID: 831140418}
   - {fileID: 1496372049}
   - {fileID: 860317407}
+  waveDatas: []
 --- !u!4 &1756802594
 Transform:
   m_ObjectHideFlags: 0
@@ -4971,6 +4973,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1574372486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1756802595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756802592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b242e65b7234bde49844a72c418b3d2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveDuration: 20
+  delayBetweenWaves: 5
 --- !u!1 &1790341586
 GameObject:
   m_ObjectHideFlags: 0

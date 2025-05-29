@@ -78,7 +78,7 @@ namespace TowerDefense.Tower
         private GameObject FindNearestEnemyInRange()
         {
             float pixelPerUnit = 100f;
-            float pixelDistance = currentTowerData.AttackRange * 128f;
+            float pixelDistance = currentTowerData.AttackRange * 256f;
             float worldRange = pixelDistance / pixelPerUnit;
 
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");

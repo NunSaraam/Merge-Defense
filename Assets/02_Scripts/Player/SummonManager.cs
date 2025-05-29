@@ -8,7 +8,6 @@ namespace TowerDefense.Player
     public class SummonManager : MonoBehaviour
     {
         [SerializeField] private GoldManager goldManager;
-        //[SerializeField] private 
         [SerializeField] private GameObject commonTowerPrefab;
         [SerializeField] private Transform[] summonParent;
         [SerializeField] private int summonStartCost = 20;
