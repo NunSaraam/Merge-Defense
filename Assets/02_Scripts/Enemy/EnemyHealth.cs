@@ -5,7 +5,7 @@ namespace TowerDefense.Enemy
 {
     public class EnemyHealth : MonoBehaviour
     {
-        public float baseHealth = 50f;
+        [SerializeField] private float baseHealth = 50f;
         private float currentHealth;
         private WaveManager waveManager;
 
@@ -28,7 +28,6 @@ namespace TowerDefense.Enemy
 
         private void Die()
         {
-            Debug.Log("Enemy Dead");
             Destroy(gameObject);
         }
     }

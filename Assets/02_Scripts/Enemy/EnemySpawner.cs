@@ -11,7 +11,6 @@ namespace TowerDefense.Enemy
         [SerializeField] private int maxSpawnCount = 10;
         [SerializeField] private float spawnInterval = 1f;
         [SerializeField] private Transform[] pathPoints;
-        [SerializeField] private WaveData[] waveDatas;
 
         private Queue<GameObject> enemyPool = new();
         private float lastSpawnTime;
