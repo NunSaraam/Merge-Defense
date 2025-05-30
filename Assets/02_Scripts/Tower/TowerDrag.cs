@@ -21,7 +21,6 @@ namespace TowerDefense.Tower
         {
             if (EventSystem.current.IsPointerOverGameObject()) return;
 
-            Debug.Log("isMouseDragging");
             offset = transform.position - GetMouseWorldPosition();
             IsDragging = true;
         }

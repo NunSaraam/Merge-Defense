@@ -11,6 +11,39 @@ public class TowerDatabase : ScriptableObject
     public List<TowerData> legendaryTowers;
     public List<TowerData> mythicalTowers;
 
+    /* TowerDatabase내 덱 설정 구현 메서드
+    public void SetTowerDeck(bool[][] towerIndex)
+    {
+        for(int i = 0; i < towerIndex[0].Length; i++)
+        {
+            for (int j = 0; j < towerIndex[i].Length; j++)
+            {
+                if (towerIndex[i][j] == true)
+                {
+                    switch(i)
+                    {
+                        case 0 :
+                            commonTowers.RemoveAt(j);
+                        break;
+                        case 1 :
+                            rareTowers.RemoveAt(j);
+                        break;
+                        case 2 :
+                            epicTowers.RemoveAt(j);
+                        break;
+                        case 3 :
+                            legendaryTowers.RemoveAt(j);
+                        break;
+                        case 4 :
+                            mythicalTowers.RemoveAt(j);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    */
+
     public List<TowerData> GetTowersByType(TowerType rarity)
     {
         switch (rarity)

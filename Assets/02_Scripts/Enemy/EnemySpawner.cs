@@ -62,7 +62,7 @@ namespace TowerDefense.Enemy
             var waveData = FindObjectOfType<WaveManager>()?.CurrentWaveData;
             if (waveData == null) return;
 
-            spawnInterval = Mathf.Max(0.2f, 3.0f - ((wave - 1) * 0.05f));
+            spawnInterval = Mathf.Max(0.2f, 2.0f - ((wave - 1) * 0.05f));
             currentSpawnCount = waveData.EnemyCount;
             InitializePool(currentSpawnCount);
             //{

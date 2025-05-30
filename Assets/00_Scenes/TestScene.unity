@@ -6655,8 +6655,8 @@ MonoBehaviour:
   - {fileID: 1657684403}
   - {fileID: 1827204503}
   - {fileID: 1855864413}
-  summonStartCost: 0
-  summonCostIncrease: 0
+  summonStartCost: 20
+  summonCostIncrease: 2
   summonFailedText: {fileID: 557520973}
 --- !u!4 &2054147507
 Transform:
