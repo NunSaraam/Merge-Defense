@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TowerDefense.Tower
@@ -15,6 +16,11 @@ namespace TowerDefense.Tower
         [SerializeField] private GameObject debugMeleeEffectPrefab;
         [SerializeField] private GameObject debugRangedEffectPrefab;
 
+        // Augmentation
+        private float bonusAttack = 0f;
+        private float bonusSpeed = 0f;
+        private float bonusCritChance = 0f;
+        private float bonusCritDamage = 0f;
 
         [SerializeField] private Transform firePoint;
 
@@ -44,6 +50,8 @@ namespace TowerDefense.Tower
 
             ApplyVisuals();
             attackCooldown = currentTowerData.AttackSpeed;
+
+            ApplyAugment(TowerUpgradeSystem.GetAllBonuses());
         }
 
         private void Update()
@@ -57,7 +65,8 @@ namespace TowerDefense.Tower
                 if (target != null)
                 {
                     Attack(target);
-                    attackCooldown = 1f / currentTowerData.AttackSpeed;
+                    float totalSpeed = currentTowerData.AttackSpeed + bonusSpeed;
+                    attackCooldown = 1f / totalSpeed;
                 }
             }
         }
@@ -135,24 +144,37 @@ namespace TowerDefense.Tower
             }
         }
 
+
         private float GetDamage()
         {
-            float baseCrit = currentTowerData.CriticalChance;
+            float baseCrit = currentTowerData.CriticalChance + bonusCritChance;
             float totalCritChance = Mathf.Clamp01(baseCrit + critBonus);
             bool isCrit = Random.value < totalCritChance;
 
             if (isCrit)
             {
                 critBonus = 0f;
-                float multiplier = 1f + currentTowerData.CriticalMultiplier;
-                return currentTowerData.Damage * multiplier;
+                float multiplier = 1.5f + currentTowerData.CriticalMultiplier + bonusCritDamage;
+                return (currentTowerData.Damage * (1f + bonusAttack)) * multiplier;
             }
             else
             {
                 float gain = baseCrit * 0.1f;
                 critBonus += gain;
-                return currentTowerData.Damage;
+                return currentTowerData.Damage * (1f + bonusAttack);
             }
+        }
+
+        public void ApplyAugment(Dictionary<AugmentType, float> buffs)
+        {
+            if (buffs.TryGetValue(AugmentType.AttackPower, out float atk))
+                bonusAttack = atk;
+            if (buffs.TryGetValue(AugmentType.AttackSpeed, out float spd))
+                bonusSpeed = spd;
+            if (buffs.TryGetValue(AugmentType.CritChance, out float crit))
+                bonusCritChance = crit;
+            if (buffs.TryGetValue(AugmentType.CritDamage, out float critDmg))
+                bonusCritDamage = critDmg;
         }
     }
 }

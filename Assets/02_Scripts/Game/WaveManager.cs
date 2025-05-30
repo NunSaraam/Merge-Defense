@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using TowerDefense.Tower;
 
 namespace TowerDefense.Game
 {
@@ -14,11 +15,12 @@ namespace TowerDefense.Game
         private int currentWave = 0;
         [SerializeField] private int aliveEnemies = 0;
         public int CurrentWave => currentWave;
-        
+
         public WaveData CurrentWaveData { get; private set; }
 
         public delegate void WaveEvent(int wave);
         public event WaveEvent OnWaveStart;
+
 
         private void Start() => StartNextWave();
 
@@ -38,8 +40,20 @@ namespace TowerDefense.Game
             currentAliveEnemies.text = $"남은 적 수 : {aliveEnemies}";
             if (aliveEnemies <= 0)
             {
-                Invoke(nameof(StartNextWave), delayBetweenWaves);
+                if (CurrentWaveData.IsBossWave)
+                {
+                    FindObjectOfType<AugmentManager>().OpenAugmentSelection(OnAugmentComplete);
+                }
+                else
+                {
+                    Invoke(nameof(StartNextWave), delayBetweenWaves);
+                }
             }
+        }
+
+        private void OnAugmentComplete()
+        {
+            Invoke(nameof(StartNextWave), delayBetweenWaves);
         }
     }
 }
