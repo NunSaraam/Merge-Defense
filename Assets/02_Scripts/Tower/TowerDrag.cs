@@ -5,7 +5,7 @@ namespace TowerDefense.Tower
 {
     public class TowerDrag : MonoBehaviour
     {
-        private Vector3 offset;
+        [SerializeField] private Vector3 offset;
         private Camera mainCamera;
         private Tower currentTower;
 
@@ -21,6 +21,7 @@ namespace TowerDefense.Tower
         {
             if (EventSystem.current.IsPointerOverGameObject()) return;
 
+            Debug.Log("isMouseDragging");
             offset = transform.position - GetMouseWorldPosition();
             IsDragging = true;
         }

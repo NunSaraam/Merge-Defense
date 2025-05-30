@@ -15,7 +15,7 @@ namespace TowerDefense.Game
         [SerializeField] private int aliveEnemies = 0;
         public int CurrentWave => currentWave;
         
-        public WaveData CurrentWaveData;
+        public WaveData CurrentWaveData { get; private set; }
 
         public delegate void WaveEvent(int wave);
         public event WaveEvent OnWaveStart;

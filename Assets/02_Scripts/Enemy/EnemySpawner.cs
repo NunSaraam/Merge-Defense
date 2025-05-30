@@ -21,12 +21,12 @@ namespace TowerDefense.Enemy
             if (waveManager != null)
             {
                 waveManager.OnWaveStart += PrepareWave;
-                var waveData = waveManager.CurrentWaveData;
-                if (waveData != null)
-                {
-                    spawnInterval = Mathf.Max(0.2f, 3.0f - ((waveManager.CurrentWave - 1) * 0.05f));
-                    InitializePool(waveData.EnemyCount);
-                }
+                //var waveData = waveManager.CurrentWaveData;
+                //if (waveData != null)
+                //{
+                //    spawnInterval = Mathf.Max(0.2f, 3.0f - ((waveManager.CurrentWave - 1) * 0.05f));
+                //    InitializePool(waveData.EnemyCount);
+                //}
             }
         }
 
@@ -61,9 +61,13 @@ namespace TowerDefense.Enemy
         {
             var waveData = FindObjectOfType<WaveManager>()?.CurrentWaveData;
             if (waveData == null) return;
-            {
-                InitializePool(waveData.EnemyCount);
-            }
+
+            spawnInterval = Mathf.Max(0.2f, 3.0f - ((wave - 1) * 0.05f));
+            currentSpawnCount = waveData.EnemyCount;
+            InitializePool(currentSpawnCount);
+            //{
+            //    InitializePool(waveData.EnemyCount);
+            //}
         }
     }
 }

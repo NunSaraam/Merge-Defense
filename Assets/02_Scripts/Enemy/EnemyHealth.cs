@@ -12,7 +12,8 @@ namespace TowerDefense.Enemy
 
         private void Start()
         {
-            var waveData = FindObjectOfType<WaveManager>()?.CurrentWaveData;
+            waveManager = FindObjectOfType<WaveManager>();
+            var waveData = waveManager?.CurrentWaveData;
             currentHealth = waveData != null ? waveData.EnemyHealth : baseHealth;
         }
 
@@ -28,9 +29,9 @@ namespace TowerDefense.Enemy
 
         private void Die()
         {
-            var gold = FindObjectOfType<WaveManager>()?.CurrentWaveData.EnemyGoldDrop ?? 0;
+            var gold = waveManager?.CurrentWaveData.EnemyGoldDrop ?? 0;
+            waveManager?.NotifyEnemyKilled();
             FindObjectOfType<GoldManager>()?.AddGold((int)gold);
-            FindObjectOfType<WaveManager>()?.NotifyEnemyKilled();
             Destroy(gameObject);
         }
     }
