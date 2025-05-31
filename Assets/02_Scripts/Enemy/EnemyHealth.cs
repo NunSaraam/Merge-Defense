@@ -23,15 +23,31 @@ namespace TowerDefense.Enemy
 
             if (currentHealth <= 0)
             {
-                Die();
+                Die(isEscaped: false);
             }
         }
 
-        private void Die()
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            var gold = waveManager?.CurrentWaveData.EnemyGoldDrop ?? 0;
+            if (other.CompareTag("Destroy"))
+            {
+                Die(isEscaped: true);
+            }
+        }
+
+        private void Die(bool isEscaped)
+        {
             waveManager?.NotifyEnemyKilled();
-            FindObjectOfType<GoldManager>()?.AddGold((int)gold);
+
+            if (!isEscaped)
+            {
+                var gold = waveManager?.CurrentWaveData.EnemyGoldDrop ?? 0;
+                FindObjectOfType<GoldManager>()?.AddGold((int)gold);
+            }
+            else
+            {
+                waveManager?.RegisterEscape();
+            }
             Destroy(gameObject);
         }
     }

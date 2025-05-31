@@ -14,6 +14,7 @@ namespace TowerDefense.Game
 
         private int currentWave = 0;
         [SerializeField] private int aliveEnemies = 0;
+        [SerializeField] private int playerHealth = 3;
         public int CurrentWave => currentWave;
 
         public WaveData CurrentWaveData { get; private set; }
@@ -54,6 +55,20 @@ namespace TowerDefense.Game
         private void OnAugmentComplete()
         {
             Invoke(nameof(StartNextWave), delayBetweenWaves);
+        }
+
+        public void RegisterEscape()
+        {
+            playerHealth = CurrentWaveData.IsBossWave ? 0 : --playerHealth;
+            // 점수저장부분
+            if (playerHealth <= 0)
+            {
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
+            }
         }
     }
 }
