@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: L_Farcon
   m_EditorClassIdentifier: 
   towerName: Farcon
-  towerGrade: 0
+  towerGrade: 3
   towerSprite: {fileID: 1929389531, guid: ce6bd92fe42b3b645be70dad67e0966c, type: 3}
   towerAnimator: {fileID: 9100000, guid: 91047f0ccdf5ef14db23b99b45223c7e, type: 2}
   attackRange: 4
@@ -22,3 +22,5 @@ MonoBehaviour:
   attackSpeed: 2
   criticalChance: 5
   criticalMultiplier: 45
+  meleeEffectPrefab: {fileID: 0}
+  rangedEffectPrefab: {fileID: 0}

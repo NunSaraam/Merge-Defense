@@ -1,65 +1,61 @@
-using UnityEngine;
 using System.Collections.Generic;
-using TowerDefense.Tower;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "TowerDatabase", menuName = "Tower/TowerDatabase")]
-public class TowerDatabase : ScriptableObject
+namespace TowerDefense.Tower
 {
-    public List<TowerData> commonTowers;
-    public List<TowerData> rareTowers;
-    public List<TowerData> epicTowers;
-    public List<TowerData> legendaryTowers;
-    public List<TowerData> mythicalTowers;
-
-    /* TowerDatabase내 덱 설정 구현 메서드
-    public void SetTowerDeck(bool[][] towerIndex)
+    [CreateAssetMenu(fileName = "TowerDatabase", menuName = "Tower/TowerDatabase")]
+    public class TowerDatabase : ScriptableObject
     {
-        for(int i = 0; i < towerIndex[0].Length; i++)
+        public List<TowerData> commonTowers;
+        public List<TowerData> rareTowers;
+        public List<TowerData> epicTowers;
+        public List<TowerData> legendaryTowers;
+        public List<TowerData> mythicalTowers;
+
+        private HashSet<string> deckTowerNames = null;
+
+        public void SetDeckFilter(List<string> towerNames)
         {
-            for (int j = 0; j < towerIndex[i].Length; j++)
+            deckTowerNames = new HashSet<string>(towerNames);
+        }
+
+        public List<TowerData> GetAllTowersByType(TowerType rarity)
+        {
+            return rarity switch
             {
-                if (towerIndex[i][j] == true)
-                {
-                    switch(i)
-                    {
-                        case 0 :
-                            commonTowers.RemoveAt(j);
-                        break;
-                        case 1 :
-                            rareTowers.RemoveAt(j);
-                        break;
-                        case 2 :
-                            epicTowers.RemoveAt(j);
-                        break;
-                        case 3 :
-                            legendaryTowers.RemoveAt(j);
-                        break;
-                        case 4 :
-                            mythicalTowers.RemoveAt(j);
-                        break;
-                    }
-                }
-            }
+                TowerType.Common => commonTowers,
+                TowerType.Rare => rareTowers,
+                TowerType.Epic => epicTowers,
+                TowerType.Legendary => legendaryTowers,
+                TowerType.Mythical => mythicalTowers,
+                _ => new List<TowerData>()
+            };
         }
-    }
-    */
 
-    public List<TowerData> GetTowersByType(TowerType rarity)
-    {
-        switch (rarity)
+        public List<TowerData> GetTowersByType(TowerType rarity)
         {
-            case TowerType.Common:
-                return commonTowers;
-            case TowerType.Rare:
-                return rareTowers;
-            case TowerType.Epic:
-                return epicTowers;
-            case TowerType.Legendary:
-                return legendaryTowers;
-            case TowerType.Mythical:
-                return mythicalTowers;
-            default:
-                return null;
+            var pool = GetAllTowersByType(rarity);
+
+            if (deckTowerNames == null || deckTowerNames.Count == 0)
+                return pool;
+
+            List<TowerData> filtered = new();
+            foreach (var tower in pool)
+            {
+                if (deckTowerNames.Contains(tower.TowerName))
+                    filtered.Add(tower);
+            }
+            return filtered;
         }
+
+#if UNITY_EDITOR
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void ResetDeckFilter()
+        {
+            var dbs = Resources.LoadAll<TowerDatabase>("");
+            foreach (var db in dbs)
+                db.SetDeckFilter(null);
+        }
+#endif
     }
 }

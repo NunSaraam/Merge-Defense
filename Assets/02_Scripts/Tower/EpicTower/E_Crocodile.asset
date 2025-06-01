@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: E_Crocodile
   m_EditorClassIdentifier: 
   towerName: Crocodile
-  towerGrade: 0
+  towerGrade: 2
   towerSprite: {fileID: 1277228152, guid: 11fe7dca1f7daa747b4d30db9bd7c5c9, type: 3}
   towerAnimator: {fileID: 9100000, guid: 6606b907d1dddcb41a49cf04b78fec98, type: 2}
   attackRange: 4
@@ -22,3 +22,5 @@ MonoBehaviour:
   attackSpeed: 1.5
   criticalChance: 6
   criticalMultiplier: 25
+  meleeEffectPrefab: {fileID: 0}
+  rangedEffectPrefab: {fileID: 0}

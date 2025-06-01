@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: R_Panda
   m_EditorClassIdentifier: 
   towerName: Panda
-  towerGrade: 0
+  towerGrade: 1
   towerSprite: {fileID: -1490139965, guid: 85d83b1fbbd06ad4f9c2a3ae7f6a73a2, type: 3}
   towerAnimator: {fileID: 9100000, guid: 7ebea5b2796e4df4398158526f839873, type: 2}
   attackRange: 2
@@ -22,3 +22,5 @@ MonoBehaviour:
   attackSpeed: 1
   criticalChance: 5
   criticalMultiplier: 15
+  meleeEffectPrefab: {fileID: 0}
+  rangedEffectPrefab: {fileID: 0}
