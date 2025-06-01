@@ -7,22 +7,19 @@ public class DeckSlot : MonoBehaviour, IDropHandler
     [SerializeField] private TowerType allowedType;
     private DraggableTowerUI assigned;
 
-    // 실제 하위 오브젝트 존재 여부를 확인하여 HasTower 결정
     public bool HasTower
     {
         get
         {
-            // assigned가 null이거나 실제 GameObject가 파괴되었으면 false
             if (assigned == null || assigned.gameObject == null)
             {
-                assigned = null; // 참조 정리
+                assigned = null;
                 return false;
             }
 
-            // assigned가 실제로 이 슬롯의 자식인지 확인
             if (assigned.transform.parent != transform)
             {
-                assigned = null; // 다른 곳으로 이동했으면 참조 해제
+                assigned = null;
                 return false;
             }
 

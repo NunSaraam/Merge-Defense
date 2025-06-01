@@ -22,7 +22,7 @@ namespace TowerDefense.Core
 
             if (!File.Exists(path))
             {
-                Debug.LogWarning("Deck file not found. Using default.");
+                Debug.LogWarning("덱 파일을 찾을 수 없음. 기본값 사용");
                 DeckData = new TowerDeckData { selectedTowerIDs = new() };
             }
             else

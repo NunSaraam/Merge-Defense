@@ -50,6 +50,6 @@ public class DeckBuilderManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(deckData, true);
         File.WriteAllText(Path.Combine(Application.persistentDataPath, SaveFilePath), json);
-        Debug.Log("Deck saved: " + Path.Combine(Application.persistentDataPath, SaveFilePath));
+        Debug.Log("덱 저장됨: " + Path.Combine(Application.persistentDataPath, SaveFilePath));
     }
 }
