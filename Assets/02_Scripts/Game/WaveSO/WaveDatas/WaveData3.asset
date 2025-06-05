@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: WaveData3
   m_EditorClassIdentifier: 
   waveNumber: 3
-  enemyCount: 60
-  enemyHealth: 70
+  enemyCount: 70
+  enemyHealth: 60
   enemyMovementSpeed: 2
   enemyGoldDrop: 1
   isBossWave: 0

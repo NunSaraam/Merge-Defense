@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveNumber: 10
   enemyCount: 1
-  enemyHealth: 25000
+  enemyHealth: 2500
   enemyMovementSpeed: 1.5
   enemyGoldDrop: 200
   isBossWave: 1
