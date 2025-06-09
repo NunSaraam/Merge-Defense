@@ -22,6 +22,7 @@ namespace TowerDefense.Game
         public delegate void WaveEvent(int wave);
         public event WaveEvent OnWaveStart;
 
+        [HideInInspector] public static bool IsBossWave { get; private set; }
 
         private void Start() => StartNextWave();
 
@@ -29,6 +30,7 @@ namespace TowerDefense.Game
         {
             currentWave++;
             CurrentWaveData = waveDatabase.GetWaveData(currentWave);
+            IsBossWave = CurrentWaveData.IsBossWave;
             aliveEnemies = CurrentWaveData.EnemyCount;
             currentWavePrint.text = $"현재 웨이브 : {CurrentWaveData.WaveNumber}";
             currentAliveEnemies.text = $"남은 적 수 : {aliveEnemies}";

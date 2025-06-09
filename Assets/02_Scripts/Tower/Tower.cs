@@ -109,6 +109,13 @@ namespace TowerDefense.Tower
 
         private void Attack(GameObject enemy)
         {
+            // 매개변수 Enemy가 target 되어 스킬 사용되는 방식
+
+            // 스킬 메서드 구현부
+
+            // 타워가 Tower 프리팹 하나로 직렬화되었기 때문에, CurrentTowerData 에서 스킬들을 불러온 후,
+            // 그 스킬의 원거리, 근거리 공격여부 등 파악한 후 개별 호출 이루어져야함.
+
             if (currentTowerData.IsLongDistance)
             {
                 LaunchProjectile(enemy);

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TowerDefense.Game;
 using TowerDefense.Player;
+using System.Collections;
 
 namespace TowerDefense.Enemy
 {
@@ -9,21 +10,24 @@ namespace TowerDefense.Enemy
         private float baseHealth = 50f;
         [SerializeField] private float currentHealth;
         private WaveManager waveManager;
+        private bool dead = false;
 
         private void Start()
         {
             waveManager = FindObjectOfType<WaveManager>();
             var waveData = waveManager?.CurrentWaveData;
             currentHealth = waveData != null ? waveData.EnemyHealth : baseHealth;
-        }
+        }   
 
         public void TakeDamage(float amount)
         {
+            if (dead) return;
             currentHealth -= amount;
 
             if (currentHealth <= 0)
             {
                 Die(isEscaped: false);
+                dead = true;
             }
         }
 

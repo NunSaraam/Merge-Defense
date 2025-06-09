@@ -2580,6 +2580,7 @@ MonoBehaviour:
   refreshCountText: {fileID: 1371878971}
   selectButton: {fileID: 893418719}
   refreshButton: {fileID: 1418724040}
+  remainingRefresh: 3
 --- !u!1 &923754886
 GameObject:
   m_ObjectHideFlags: 0
@@ -6514,6 +6515,7 @@ MonoBehaviour:
   refreshCountText: {fileID: 589757477}
   selectButton: {fileID: 1665266213}
   refreshButton: {fileID: 1187574216}
+  remainingRefresh: 3
 --- !u!1 &1678682121
 GameObject:
   m_ObjectHideFlags: 0
@@ -6768,6 +6770,7 @@ MonoBehaviour:
   - {fileID: 5633984650277989519, guid: 1ddb93ec20f38de4aae74fdf33c9c62b, type: 3}
   - {fileID: 8073770007818007515, guid: 254160d8d879d814bb2c79e6d019c156, type: 3}
   - {fileID: 3665967754543765711, guid: 249c40c2422043a448515d4a6186021d, type: 3}
+  bossPrefab: {fileID: 313304484493102078, guid: a5a06b9602bf7394d87bfb3a6760f1c9, type: 3}
   spawnPoint: {fileID: 845818108}
   spawnInterval: 3
   pathPoints:
@@ -6968,6 +6971,7 @@ MonoBehaviour:
   refreshCountText: {fileID: 1341411014}
   selectButton: {fileID: 1766392239}
   refreshButton: {fileID: 847130766}
+  remainingRefresh: 1
 --- !u!1 &1790341586
 GameObject:
   m_ObjectHideFlags: 0

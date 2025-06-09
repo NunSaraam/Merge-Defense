@@ -17,7 +17,7 @@ namespace TowerDefense.UI
         private System.Action<AugmentData> onSelect;
         private System.Action<AugmentUIOption> onRefresh;
 
-        private int remainingRefresh = 3;
+        private int remainingRefresh = 1;
 
         public void Initialize(AugmentData augment, System.Action<AugmentData> selectCallback, System.Action<AugmentUIOption> refreshCallback = null)
         {
@@ -53,7 +53,7 @@ namespace TowerDefense.UI
         {
             nameText.text = data.AugmentName;
             descText.text = $"{data.Description}\n{data.GetDisplayValue()}";
-            refreshCountText.text = $"새로고침 {remainingRefresh}/3";
+            refreshCountText.text = $"새로고침 {remainingRefresh}/1";
             refreshButton.interactable = remainingRefresh > 0;
         }
 
