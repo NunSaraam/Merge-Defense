@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HyenaSkill : MonoBehaviour
 {
-    public float attackDamage = 10f;
+    public float attackDamage = 10f;    // 공격 스크립트 공격력 받을 예정
 
-    private int attackCount = 1;
+    public int attackCount = 1;
 
     // Start
     void Start()
