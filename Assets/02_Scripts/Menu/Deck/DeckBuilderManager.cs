@@ -52,4 +52,10 @@ public class DeckBuilderManager : MonoBehaviour
         File.WriteAllText(Path.Combine(Application.persistentDataPath, SaveFilePath), json);
         Debug.Log("덱 저장됨: " + Path.Combine(Application.persistentDataPath, SaveFilePath));
     }
+
+    public bool IsDeckSaved()
+    {
+        string path = Path.Combine(Application.persistentDataPath,SaveFilePath);
+        return File.Exists(path) && new FileInfo(path).Length > 0;
+    }
 }

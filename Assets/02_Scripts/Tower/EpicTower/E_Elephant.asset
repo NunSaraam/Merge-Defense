@@ -17,7 +17,7 @@ MonoBehaviour:
   towerSprite: {fileID: -2049452912, guid: 5d172f70beda0ca4dae98c1c2f010cd6, type: 3}
   towerAnimator: {fileID: 9100000, guid: 4a4615a741f3a8445bee912d2b08e9cd, type: 2}
   attackRange: 1
-  isLongDistance: 1
+  isLongDistance: 0
   damage: 40
   attackSpeed: 0.75
   criticalChance: 10

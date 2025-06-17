@@ -6,19 +6,36 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public string gameStart;
-    
 
-    public void GameStartButton()
+    [SerializeField] private DeckBuilderManager deckBuilderManager;
+    [SerializeField] private GameObject deckWariningTextUI;
+    [SerializeField] private Button startGameButton;
+
+    public string gameStart;
+    private float deckWarningTimer = 1f;
+
+    private void Start()
+    {
+        deckWariningTextUI.SetActive(false);
+        startGameButton.onClick.AddListener(OnClickGameStartButton);
+    }
+
+    public void OnClickGameStartButton()
+    {
+        if (!deckBuilderManager.IsDeckSaved())
+        {
+            deckWariningTextUI.SetActive(true);
+            return;
+        }
+
+        deckWariningTextUI.SetActive(false);
+        GameStart();
+    }
+
+    public void GameStart()
     {
         SceneManager.LoadScene(gameStart);
     }
-    
-    public void Maingo()
-    {
-        SceneManager.LoadScene("Mainmenu");
-    }
-
     public void ExitButton()
     {
         Application.Quit();
