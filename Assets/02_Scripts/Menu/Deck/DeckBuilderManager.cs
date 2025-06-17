@@ -56,6 +56,12 @@ public class DeckBuilderManager : MonoBehaviour
     public bool IsDeckSaved()
     {
         string path = Path.Combine(Application.persistentDataPath,SaveFilePath);
-        return File.Exists(path) && new FileInfo(path).Length > 0;
+        if (!File.Exists(path)) return false;
+        
+        string json = File.ReadAllText(path);
+        if (string.IsNullOrEmpty(json)) return false;
+
+        TowerDeckData data = JsonUtility.FromJson<TowerDeckData>(json);
+        return data != null && data.selectedTowerIDs != null && data.selectedTowerIDs.Count > 0;
     }
 }

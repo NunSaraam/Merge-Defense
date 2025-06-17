@@ -22,12 +22,21 @@ public class MenuManager : MonoBehaviour
 
     public void OnClickGameStartButton()
     {
-        if (!deckBuilderManager.IsDeckSaved())
+        if (deckBuilderManager == null)
         {
-            deckWariningTextUI.SetActive(true);
+            Debug.LogError("DeckBuilderManager가 MenuManager에 연결되지 않았습니다!");
             return;
         }
 
+        if (!deckBuilderManager.IsDeckSaved())
+        {
+            Debug.Log("덱이 저장되지 않았습니다.");
+            deckWariningTextUI.SetActive(true);
+            StartCoroutine(HideDeck(1f));
+            return;
+        }
+
+        Debug.Log("덱이 저장되었으므로 게임을 시작합니다.");
         deckWariningTextUI.SetActive(false);
         GameStart();
     }
@@ -41,4 +50,9 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    private IEnumerator HideDeck(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        deckWariningTextUI.SetActive(false);
+    }
 }
