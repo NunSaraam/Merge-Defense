@@ -6,7 +6,7 @@ namespace TowerDefense.Player
     public class GoldManager : MonoBehaviour
     {
         [SerializeField] private int startingGold = 100;
-        private int currentGold;
+        [SerializeField] private int currentGold;
 
         public int CurrentGold => currentGold;
         public event Action<int> OnGoldChanged;
@@ -15,6 +15,15 @@ namespace TowerDefense.Player
         {
             currentGold = startingGold;
             OnGoldChanged?.Invoke(currentGold);
+        }
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                currentGold += 10;
+                OnGoldChanged?.Invoke(currentGold);
+
+            }
         }
 
         public void AddGold(int amount)
