@@ -16,7 +16,7 @@ MonoBehaviour:
   towerGrade: 4
   towerSprite: {fileID: 21300000, guid: 7607e4c0d46da4f4f8535bf529c8817c, type: 3}
   towerAnimator: {fileID: 9100000, guid: 2f90d0dcca7b67b4a8dd869ca3584021, type: 2}
-  attackRange: 3
+  attackRange: 4
   isLongDistance: 1
   damage: 250
   attackSpeed: 3
