@@ -1,41 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
+using TowerDefense.Tower;
 using UnityEngine;
 
 public class FalconSkill : MonoBehaviour
 {
-    [Header("Skill Prefabs")]
-    public GameObject falconSkillPf;      // 스킬 프리팹 적용 ( 원하는 범위의 크기로 )
-    // 스킬 프리팹에 FalconSkillP Script 적용
+    [SerializeField] private float attackSpeedIncreasePercent = 10f; // 공격 속도 증가 %
+    [SerializeField] private float buffDuration = 10f;  // 버프 지속 시간
+    [SerializeField] private float cooldown = 60f;      // 스킬 쿨타임
 
+    private bool isCooldown = false;
 
-    // 타워 스크립트에 추가 / OnTriggerEnter2D 사용하여 Falcon Tag에 닿을 시 10초 동안 공격 속도 10% 증가
-    // Falcon Tag에 닿으면 변수 추가 / 변수가 있을 시 10초 후에는 원래 공격 속도로 복구 및 변수 제거
-
-
-    [SerializeField] private float cooldown;
-    private float dCooldown = 60f;
-
-    // Update
-    void Update()
+    private void Start()
     {
-        if (cooldown > 0)
-        {
-            cooldown -= Time.deltaTime;
-        }
+        StartCoroutine(BuffRoutine());
+    }
 
-        if (cooldown <= 0)
+    private IEnumerator BuffRoutine()
+    {
+        while (true)
         {
-            SkillF();
+            if (!isCooldown)
+            {
+                ApplyBuffToAll();
+                isCooldown = true;
+                yield return new WaitForSeconds(cooldown);
+                isCooldown = false;
+            }
+            yield return null;
         }
     }
 
-    void SkillF()
+    private void ApplyBuffToAll()
     {
-        cooldown += dCooldown;
+        GameObject[] allies = GameObject.FindGameObjectsWithTag("Team");
 
-        Transform towerTransform = transform;
+        foreach (GameObject ally in allies)
+        {
+            Tower tower = ally.GetComponent<Tower>();
+            if (tower != null)
+            {
+                tower.StartCoroutine(AttackSpeedBuff(tower));
+            }
+        }
+    }
 
-        Instantiate(falconSkillPf, towerTransform.position, towerTransform.rotation);
+    private IEnumerator AttackSpeedBuff(Tower tower)
+    {
+        tower.ApplyAugment(new System.Collections.Generic.Dictionary<AugmentType, float>
+        {
+            { AugmentType.AttackSpeed, attackSpeedIncreasePercent / 100f }
+        });
+
+        yield return new WaitForSeconds(buffDuration);
+
+        tower.ApplyAugment(new System.Collections.Generic.Dictionary<AugmentType, float>
+        {
+            { AugmentType.AttackSpeed, 0f }
+        });
     }
 }

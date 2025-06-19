@@ -1,5 +1,6 @@
 using TowerDefense.Game;
 using UnityEngine;
+using System.Collections;
 
 namespace TowerDefense.Enemy
 {
@@ -38,6 +39,52 @@ namespace TowerDefense.Enemy
                     Destroy(gameObject);
                 }
             }
+        }
+
+        public void ModifySpeed(float multiplier, float duration)
+        {
+            StartCoroutine(SlowDownCoroutine(multiplier, duration));
+        }
+
+        private IEnumerator SlowDownCoroutine(float multiplier, float duration)
+        {
+            float originalSpeed = moveSpeed;
+            moveSpeed *= multiplier;
+            yield return new WaitForSeconds(duration);
+            moveSpeed = originalSpeed;
+        }
+
+        // Crocodile
+        private bool isStun = false;
+
+        public void Stun(float duration)
+        {
+            if (!isStun)
+                StartCoroutine(StunCoroutine(duration));
+        }
+
+        private IEnumerator StunCoroutine(float duration)
+        {
+            isStun = true;
+            float originalSpeed = moveSpeed;
+            moveSpeed = 0f;
+            yield return new WaitForSeconds(duration);
+            moveSpeed = originalSpeed;
+            isStun = false;
+        }
+
+        // Rino
+        public void ApplyStun(float duration)
+        {
+            StartCoroutine(StunCoroutineR(duration));
+        }
+
+        private IEnumerator StunCoroutineR(float duration)
+        {
+            float originalSpeed = moveSpeed;
+            moveSpeed = 0f;  // 스턴 ( 이속 0 )
+            yield return new WaitForSeconds(duration);
+            moveSpeed = originalSpeed;  // 스턴 종료 ( 이속 복구 )
         }
     }
 }

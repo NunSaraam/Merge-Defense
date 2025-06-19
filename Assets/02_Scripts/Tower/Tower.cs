@@ -76,6 +76,39 @@ namespace TowerDefense.Tower
             currentTowerType = newType;
             currentTowerData = newData;
             ApplyVisuals();
+
+            if (currentTowerData.TowerName == "Raccoon" && GetComponent<RaccoonSkill>() == null)
+            {
+                gameObject.AddComponent<RaccoonSkill>();
+            }
+            if (currentTowerData.TowerName == "Hyena" && GetComponent<HyenaSkill>() == null)
+            {
+                gameObject.AddComponent<HyenaSkill>();
+            }
+            if (currentTowerData.TowerName == "Farcon" && GetComponent<FalconSkill>() == null)
+            {
+                gameObject.AddComponent<FalconSkill>();
+            }
+            if (currentTowerData.TowerName == "Lion" && GetComponent<LionSkill>() == null)
+            {
+                gameObject.AddComponent<LionSkill>();
+            }
+            if (currentTowerData.TowerName == "BlackPuma" && GetComponent<BlackPumaSkill>() == null)
+            {
+                gameObject.AddComponent<BlackPumaSkill>();
+            }
+            if (currentTowerData.TowerName == "Crocodile" && GetComponent<CrocodileSkill>() == null)
+            {
+                gameObject.AddComponent<CrocodileSkill>();
+            }
+            if (currentTowerData.TowerName == "Tiger" && GetComponent<TigerSkill>() == null)
+            {
+                gameObject.AddComponent<TigerSkill>();
+            }
+            if (currentTowerData.TowerName == "Rino" && GetComponent<RinoSkill>() == null)
+            {
+                gameObject.AddComponent<RinoSkill>();
+            }
         }
 
         private void ApplyVisuals()
@@ -135,6 +168,31 @@ namespace TowerDefense.Tower
             if (target.TryGetComponent(out Enemy.EnemyHealth health))
             {
                 float damage = GetDamage();
+
+                RaccoonSkill raccoonSkill = GetComponent<RaccoonSkill>();
+                if (raccoonSkill != null)
+                {
+                    raccoonSkill.RandomGold();
+                }
+
+                HyenaSkill hyenaSkill = GetComponent<HyenaSkill>();
+                if (hyenaSkill != null)
+                {
+                    hyenaSkill.OnAttack();
+                }
+
+                BlackPumaSkill blackPumaSkill = GetComponent<BlackPumaSkill>();
+                if (blackPumaSkill != null && blackPumaSkill.IsFirstAttack(target))
+                {
+                    damage *= 2f;
+                }
+
+                TigerSkill tigerSkill = GetComponent<TigerSkill>();
+                if (tigerSkill != null)
+                {
+                    tigerSkill.ApplyBleed(target);
+                }
+
                 health.TakeDamage(damage);
             }
         }
@@ -148,6 +206,13 @@ namespace TowerDefense.Tower
             if (projectile.TryGetComponent(out Projectile proj))
             {
                 proj.Init(target.transform, GetDamage());
+
+                // Crocodile
+                CrocodileSkill crocSkill = GetComponent<CrocodileSkill>();
+                if (crocSkill != null)
+                {
+                    crocSkill.OnAttack(target.transform.position);
+                }
             }
         }
 
@@ -162,13 +227,27 @@ namespace TowerDefense.Tower
             {
                 critBonus = 0f;
                 float multiplier = 1.5f + currentTowerData.CriticalMultiplier + bonusCritDamage;
-                return (currentTowerData.Damage * (1f + bonusAttack)) * multiplier;
+                float damage = (currentTowerData.Damage * (1f + bonusAttack)) * multiplier;
+
+                HyenaSkill hyenaSkill = GetComponent<HyenaSkill>();
+                if (hyenaSkill != null && hyenaSkill.TryConsumeCritical())
+                {
+                    damage *= 2f;
+                }
+                return damage;
             }
             else
             {
                 float gain = baseCrit * 0.1f;
                 critBonus += gain;
-                return currentTowerData.Damage * (1f + bonusAttack);
+                float damage = currentTowerData.Damage * (1f + bonusAttack);
+
+                HyenaSkill hyenaSkill = GetComponent<HyenaSkill>();
+                if (hyenaSkill != null && hyenaSkill.TryConsumeCritical())
+                {
+                    damage *= 2f;
+                }
+                return damage;
             }
         }
 

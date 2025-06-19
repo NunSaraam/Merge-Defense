@@ -1,43 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using TowerDefense.Player;
 using UnityEngine;
 
 public class RaccoonSkill : MonoBehaviour
 {
-    public int attackCount = 0;
+    [SerializeField] private float randomChance = 20f;  // 골드 획득 확률
+    [SerializeField] private int goldAmount = 1;        // 골드 획득량
 
-    private float randomChance = 20f;
+    private GoldManager goldManager;
 
-    // Start
-    void Start()
+    private void Start()
     {
-        attackCount = 0;
+        goldManager = FindObjectOfType<GoldManager>();
+        if (goldManager == null)
+            Debug.LogError("GoldManager를 찾을 수 없음.");
     }
 
-    // Update
-    void Update()
+    public void RandomGold()
     {
-        // 공격 스크립트에 라쿤 스킬 오브젝트 받는 코드 추가   <- 예정
-        // if 타워가 라쿤일 경우  밑에 코드 실행               <- 추가 예정
-        // 공격 스크립트에서 공격 시 attackCount 1 증가        <- 추가 예정
-
-        if (attackCount > 0)
+        float roll = Random.Range(0f, 100f);
+        if (roll <= randomChance)
         {
-            RandomGold();
-        }
-    }
-
-    //RandomGold
-    void RandomGold()
-    {
-        if(attackCount >= 1)
-        {
-            attackCount--;
-            float randomG = Random.Range(1, 101);
-            if(randomG <= randomChance)
-            {
-                //Gold++;       <- 추가 예정
-            }
+            goldManager.AddGold(goldAmount);
+            Debug.Log("골드 +" + goldAmount);
         }
     }
 }

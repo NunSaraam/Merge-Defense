@@ -4,36 +4,26 @@ using UnityEngine;
 
 public class HyenaSkill : MonoBehaviour
 {
-    public float attackDamage = 10f;    // 공격 스크립트 공격력 받을 예정
+    private int attackCount = 0;
+    private bool nextAttackCritical = false;
 
-    public int attackCount = 1;
-
-    // Start
-    void Start()
+    public void OnAttack()
     {
-        attackCount = 1;
-    }
-
-    // Update
-    void Update()
-    {
-        //공격 시 발동할 조건문
-        if (attackCount == 3)
+        attackCount++;
+        if (attackCount >= 3)
         {
-            Critical();
-            attackCount = 1;
-        }
-        else
-        {
-            //일반 공격
-            attackCount++;
+            nextAttackCritical = true;
+            attackCount = 0;
         }
     }
 
-    // Critical
-    void Critical()
+    public bool TryConsumeCritical()
     {
-        float criticalDamage = attackDamage * 2;
-        //공격 (대미지를 attackDamage -> criticalDamage 로 적용)
+        if (nextAttackCritical)
+        {
+            nextAttackCritical = false;
+            return true;
+        }
+        return false;
     }
 }

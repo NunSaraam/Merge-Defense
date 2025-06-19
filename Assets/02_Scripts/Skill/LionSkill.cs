@@ -1,41 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
+using TowerDefense.Enemy;
 using UnityEngine;
 
 public class LionSkill : MonoBehaviour
 {
-    [Header("Skill Prefabs")]
-    public GameObject lionSkillPf;      // 스킬 프리팹 적용 ( 원하는 범위의 크기로 )
-                                        // 스킬 프리팹에 LionSkillP Script 적용
+    [SerializeField] private float slowMultiplier = 0.5f;  // 이동 속도 50% 감소
+    [SerializeField] private float slowDuration = 15f;     // 15초간 이동 속도 감소
+    [SerializeField] private float cooldown = 45f;         // 쿨타임
 
+    private bool isCooldown = false;
 
-    // 몬스터 스크립트에 추가 / OnTriggerEnter2D 사용하여 Lion Tag에 닿을 시 15초 동안 이동 속도 /2
-    // Lion Tag에 닿으면 변수 추가 / 변수가 있을 시 15초 후에는 원래 이동 속도로 복구 및 변수 제거
-
-
-    [SerializeField] private float cooldown;
-    private float dCooldown = 45f;
-
-    // Update
-    void Update()
+    private void Start()
     {
-        if (cooldown > 0)
-        {
-            cooldown -= Time.deltaTime;
-        }
+        StartCoroutine(SlowRoutine());
+    }
 
-        if (cooldown <= 0)
+    private IEnumerator SlowRoutine()
+    {
+        while (true)
         {
-            SkillL();
+            if (!isCooldown)
+            {
+                ApplySlowToAll();
+                isCooldown = true;
+                yield return new WaitForSeconds(cooldown);
+                isCooldown = false;
+            }
+            yield return null;
         }
     }
 
-    void SkillL()
+    private void ApplySlowToAll()
     {
-        cooldown += dCooldown;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        Transform towerTransform = transform;
-
-        Instantiate(lionSkillPf, towerTransform.position, towerTransform.rotation);
+        foreach (GameObject enemy in enemies)
+        {
+            EnemyMovement movement = enemy.GetComponent<EnemyMovement>();
+            if (movement != null)
+            {
+                movement.ModifySpeed(slowMultiplier, slowDuration);
+            }
+        }
     }
 }
