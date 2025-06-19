@@ -12,7 +12,6 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private Button startGameButton;
 
     public string gameStart;
-    private float deckWarningTimer = 1f;
 
     private void Start()
     {
