@@ -109,6 +109,18 @@ namespace TowerDefense.Tower
             {
                 gameObject.AddComponent<RinoSkill>();
             }
+            if (currentTowerData.TowerName == "Griffin" && GetComponent<GriffinSkill>() == null)
+            {
+                gameObject.AddComponent<GriffinSkill>();
+            }
+            if (currentTowerData.TowerName == "Pegasus" && GetComponent<PegasusSkill>() == null)
+            {
+                gameObject.AddComponent<PegasusSkill>();
+            }
+            if (currentTowerData.TowerName == "Cerberus" && GetComponent<CerberusSkill>() == null)
+            {
+                gameObject.AddComponent<CerberusSkill>();
+            }
         }
 
         private void ApplyVisuals()
@@ -261,6 +273,24 @@ namespace TowerDefense.Tower
                 bonusCritChance = crit;
             if (buffs.TryGetValue(AugmentType.CritDamage, out float critDmg))
                 bonusCritDamage = critDmg;
+        }
+
+        // Cerberus
+        public void ApplyBonusAttackPower(float value)
+        {
+            bonusAttack += value;
+        }
+
+        // Pegasus
+        public void ApplyBonusAttackSpeed(float value)
+        {
+            bonusSpeed += value;
+        }
+
+        // Griffin
+        public void ApplyBonusCritChance(float value)
+        {
+            bonusCritChance += value;
         }
     }
 }
