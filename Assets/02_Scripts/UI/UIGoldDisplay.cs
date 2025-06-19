@@ -23,7 +23,7 @@ namespace TowerDefense.UI
 
         private void UpdateGoldText(int gold)
         {
-            goldText.text = $"현재 골드 : {gold}";
+            goldText.text = $" : {gold}";
         }
     }
 }
