@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Hedgehog
   towerGrade: 0
-  towerSprite: {fileID: -814225683, guid: 0b6baa1fc9891ac4ca73ba48ea2662e4, type: 3}
-  towerAnimator: {fileID: 9100000, guid: e779ec6c990fa5b4b9d7e947a3de8b74, type: 2}
+  towerSprite: {fileID: 639269407, guid: a490f2afe7709a7408f05638a12523d9, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 7380f630ccfe8d74f9c58b11d912249a, type: 2}
   attackRange: 3
   isLongDistance: 1
   damage: 6
   attackSpeed: 1
   criticalChance: 3
   criticalMultiplier: 10
+  meleeEffectPrefab: {fileID: 4916334028508915469, guid: 98e947b3c4c9c794080c3840eb99f09b, type: 3}
+  rangedEffectPrefab: {fileID: 4916334028508915469, guid: 98e947b3c4c9c794080c3840eb99f09b, type: 3}

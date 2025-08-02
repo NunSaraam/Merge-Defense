@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Turtle
   towerGrade: 0
-  towerSprite: {fileID: 1885616104, guid: 8022f1e7fa0c0b24eacee0848e083062, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 0d39380175ed1ff4da97395d482c5e07, type: 2}
+  towerSprite: {fileID: 1352651254, guid: 3d5695658dc688245ace1be71bfa3a16, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 2434f834b2c76994aae642e842cba139, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 7
   attackSpeed: 1
   criticalChance: 3
   criticalMultiplier: 10
+  meleeEffectPrefab: {fileID: 8744329751738388355, guid: 5acd778f75180a94a922b063b83792c1, type: 3}
+  rangedEffectPrefab: {fileID: 8744329751738388355, guid: 5acd778f75180a94a922b063b83792c1, type: 3}

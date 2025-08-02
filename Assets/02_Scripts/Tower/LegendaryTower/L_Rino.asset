@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Rino
   towerGrade: 3
-  towerSprite: {fileID: 807013539, guid: 93ea976119bcba44792f8618cd3c5839, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 2e2fb69973e8f55459e04b8f1b2cd75e, type: 2}
+  towerSprite: {fileID: 675476190, guid: a3d21daf683dfd54481fa8d195eaf6f3, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 2002d9e842489b94aa6069a089d18cbd, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 90
   attackSpeed: 1
   criticalChance: 15
   criticalMultiplier: 70
-  meleeEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 6350847285379818304, guid: aab1accca317ecc4e96890267868fcb3, type: 3}
   rangedEffectPrefab: {fileID: 0}

@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Lion
   towerGrade: 3
-  towerSprite: {fileID: -764742361, guid: d4514cc68f17ce84ea28711607338722, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 72bdb91a18de2184798016b21c57ca2d, type: 2}
+  towerSprite: {fileID: 257952100, guid: 6534cc01068cac448b7e8db4da6cc9dc, type: 3}
+  towerAnimator: {fileID: 9100000, guid: a44bcc87f968d234291f22574a8121cd, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 70
   attackSpeed: 1.5
   criticalChance: 10
   criticalMultiplier: 60
-  meleeEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 8744329751738388355, guid: 5acd778f75180a94a922b063b83792c1, type: 3}
   rangedEffectPrefab: {fileID: 0}

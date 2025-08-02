@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Tiger
   towerGrade: 3
-  towerSprite: {fileID: -1200556726, guid: a1215c650744fef4594e7e027d141ac1, type: 3}
-  towerAnimator: {fileID: 9100000, guid: d23f15622d5215441aacafb66e09eb54, type: 2}
+  towerSprite: {fileID: -317317213, guid: 68464b3569e69f644b8facaf278ebc76, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 5d800380f9666c740a470fcea16c45eb, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 70
   attackSpeed: 1.75
   criticalChance: 8
   criticalMultiplier: 60
-  meleeEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 4112533191635947356, guid: 3934e848a762464409559f1d0521fcbc, type: 3}
   rangedEffectPrefab: {fileID: 0}

@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Goat
   towerGrade: 0
-  towerSprite: {fileID: 913460851, guid: f387e8e9c5042a64885130e73c3d4382, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 2baddb44b5c79b94ab7d38f4459fa2ab, type: 2}
+  towerSprite: {fileID: 1848091489, guid: 784b114cfe9400b40a0ca6285fedbd44, type: 3}
+  towerAnimator: {fileID: 9100000, guid: d90415fb5214c9a42b5d7a29230ed7ce, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 7
   attackSpeed: 1
   criticalChance: 3
   criticalMultiplier: 10
+  meleeEffectPrefab: {fileID: 6350847285379818304, guid: aab1accca317ecc4e96890267868fcb3, type: 3}
+  rangedEffectPrefab: {fileID: 6350847285379818304, guid: aab1accca317ecc4e96890267868fcb3, type: 3}

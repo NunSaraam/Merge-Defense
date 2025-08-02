@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Bunny
   towerGrade: 0
-  towerSprite: {fileID: -1654857495, guid: dc5ce18a7aac3604cb72b8121a640ed9, type: 3}
+  towerSprite: {fileID: 1497242802, guid: 06abd4e3a4f9bd045b732d49800fa983, type: 3}
   towerAnimator: {fileID: 9100000, guid: 89ff898c377bfd1419e0cc8ab2446925, type: 2}
   attackRange: 4
   isLongDistance: 1
@@ -22,3 +22,5 @@ MonoBehaviour:
   attackSpeed: 1
   criticalChance: 3
   criticalMultiplier: 10
+  meleeEffectPrefab: {fileID: 8652307760370555916, guid: caba8d362f90edd4f978d73cab74b2e7, type: 3}
+  rangedEffectPrefab: {fileID: 8652307760370555916, guid: caba8d362f90edd4f978d73cab74b2e7, type: 3}

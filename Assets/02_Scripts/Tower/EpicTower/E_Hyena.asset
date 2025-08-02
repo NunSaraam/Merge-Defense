@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Hyena
   towerGrade: 2
-  towerSprite: {fileID: -1207616038, guid: bbb179210b50f1c46b6963b4f978b829, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 6aded2f1710d18d48991867fd9b0dec3, type: 2}
+  towerSprite: {fileID: -1862650103, guid: c391bfc5183f16a49a0d4f32066d44a4, type: 3}
+  towerAnimator: {fileID: 9100000, guid: bdb608851e09e0843be479adf7c8b1d1, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 35
   attackSpeed: 1.5
   criticalChance: 8
   criticalMultiplier: 30
-  meleeEffectPrefab: {fileID: 0}
-  rangedEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 8744329751738388355, guid: 5acd778f75180a94a922b063b83792c1, type: 3}
+  rangedEffectPrefab: {fileID: 8744329751738388355, guid: 5acd778f75180a94a922b063b83792c1, type: 3}

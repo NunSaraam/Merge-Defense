@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Elephant
   towerGrade: 2
-  towerSprite: {fileID: -2049452912, guid: 5d172f70beda0ca4dae98c1c2f010cd6, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 4a4615a741f3a8445bee912d2b08e9cd, type: 2}
+  towerSprite: {fileID: 366586438, guid: 9d6cdc541e9961e43aaa5c5ae56728dd, type: 3}
+  towerAnimator: {fileID: 9100000, guid: c2727f4513488584a91eee222041621d, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 40
   attackSpeed: 0.75
   criticalChance: 10
   criticalMultiplier: 40
-  meleeEffectPrefab: {fileID: 0}
-  rangedEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 6350847285379818304, guid: aab1accca317ecc4e96890267868fcb3, type: 3}
+  rangedEffectPrefab: {fileID: 4408944097661609220, guid: 23d7951006e79fe4ba08b65ab1e16b40, type: 3}

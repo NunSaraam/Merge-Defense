@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Penguin
   towerGrade: 0
-  towerSprite: {fileID: 1533347143, guid: bf39109ff3124684ba6658b0094e20d6, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 5dad88a8315664040bb7e15782fd0613, type: 2}
+  towerSprite: {fileID: -1505457699, guid: 2c84597902f2e494d8c0a7dcda1847ca, type: 3}
+  towerAnimator: {fileID: 9100000, guid: ea8d2c8c814ab894d934ad687021b99b, type: 2}
   attackRange: 4
   isLongDistance: 1
   damage: 4
   attackSpeed: 1
   criticalChance: 3
   criticalMultiplier: 10
+  meleeEffectPrefab: {fileID: 0}
+  rangedEffectPrefab: {fileID: 4408944097661609220, guid: 23d7951006e79fe4ba08b65ab1e16b40, type: 3}

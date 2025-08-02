@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Cerberus
   towerGrade: 4
-  towerSprite: {fileID: 21300000, guid: 7607e4c0d46da4f4f8535bf529c8817c, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 2f90d0dcca7b67b4a8dd869ca3584021, type: 2}
+  towerSprite: {fileID: 740239678, guid: b7f903519044c9c4f84d400af9639669, type: 3}
+  towerAnimator: {fileID: 9100000, guid: f35c36f922233e344916df0fd55dff4a, type: 2}
   attackRange: 4
   isLongDistance: 1
   damage: 250
   attackSpeed: 3
   criticalChance: 20
   criticalMultiplier: 150
-  meleeEffectPrefab: {fileID: 0}
-  rangedEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 7136945355562173650, guid: 99dd04ce6926e6a4ead390c43bddcead, type: 3}
+  rangedEffectPrefab: {fileID: 7464715200594275600, guid: 187752323202b0b48aa670a6193bce61, type: 3}

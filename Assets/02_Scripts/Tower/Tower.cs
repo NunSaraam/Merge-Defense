@@ -11,10 +11,12 @@ namespace TowerDefense.Tower
 
         [SerializeField] private TowerDatabase towerDatabase;
 
-        // Only Test
-        [SerializeField] private bool useDebugEffects = true;
+        // Only Test/
+        /*
+        [SerializeField] private bool useDebugEffects = false;
         [SerializeField] private GameObject debugMeleeEffectPrefab;
         [SerializeField] private GameObject debugRangedEffectPrefab;
+        */
 
         // Augmentation
         private float bonusAttack = 0f;
@@ -172,10 +174,8 @@ namespace TowerDefense.Tower
         }
         private void MeleeAttack(GameObject target)
         {
-            GameObject prefab = useDebugEffects ? debugMeleeEffectPrefab : currentTowerData.MeleeEffectPrefab;
-            if (prefab == null || target == null) return;
 
-            Instantiate(prefab, target.transform.position, Quaternion.identity);
+            Instantiate(currentTowerData.MeleeEffectPrefab, target.transform.position, Quaternion.identity);
 
             if (target.TryGetComponent(out Enemy.EnemyHealth health))
             {
@@ -211,10 +211,8 @@ namespace TowerDefense.Tower
 
         private void LaunchProjectile(GameObject target)
         {
-            GameObject prefab = useDebugEffects ? debugRangedEffectPrefab : currentTowerData.RangedEffectPrefab;
-            if (prefab == null) return;
 
-            GameObject projectile = Instantiate(prefab, firePoint.position, Quaternion.identity);
+            GameObject projectile = Instantiate(currentTowerData.RangedEffectPrefab, firePoint.position, Quaternion.identity);
             if (projectile.TryGetComponent(out Projectile proj))
             {
                 proj.Init(target.transform, GetDamage());

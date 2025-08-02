@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Griffin
   towerGrade: 4
-  towerSprite: {fileID: 21300000, guid: f43d5135ec051f64b8430842b63acbd1, type: 3}
-  towerAnimator: {fileID: 9100000, guid: f8d93f3ca8ff6054683a6db6f1b30a6d, type: 2}
+  towerSprite: {fileID: 1616543729, guid: 9025d80b96b93aa4fa40ddf5c282e7cc, type: 3}
+  towerAnimator: {fileID: 9100000, guid: ce878b7adaf175844b502c42a48c66bb, type: 2}
   attackRange: 4
   isLongDistance: 1
   damage: 300
   attackSpeed: 3
   criticalChance: 20
   criticalMultiplier: 150
-  meleeEffectPrefab: {fileID: 0}
-  rangedEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 7136945355562173650, guid: 99dd04ce6926e6a4ead390c43bddcead, type: 3}
+  rangedEffectPrefab: {fileID: 7136945355562173650, guid: 99dd04ce6926e6a4ead390c43bddcead, type: 3}

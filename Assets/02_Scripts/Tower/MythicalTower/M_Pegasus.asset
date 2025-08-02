@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Pegasus
   towerGrade: 4
-  towerSprite: {fileID: 21300000, guid: d86663869ecda4d46929d3a85388374a, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 1241c25c83664ae40a59fa031cf35260, type: 2}
+  towerSprite: {fileID: -1928299211, guid: 90b7ca771042bff4a8b2768cd679b33a, type: 3}
+  towerAnimator: {fileID: 9100000, guid: becab2a8e71b42649bb7deba79948a07, type: 2}
   attackRange: 4
   isLongDistance: 1
   damage: 300
   attackSpeed: 3
   criticalChance: 20
   criticalMultiplier: 150
-  meleeEffectPrefab: {fileID: 0}
-  rangedEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 1274990510446737245, guid: 31e8630be1933534db83ce7b85729216, type: 3}
+  rangedEffectPrefab: {fileID: 1274990510446737245, guid: 31e8630be1933534db83ce7b85729216, type: 3}

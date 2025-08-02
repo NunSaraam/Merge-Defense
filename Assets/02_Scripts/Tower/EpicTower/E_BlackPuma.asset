@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: BlackPuma
   towerGrade: 2
-  towerSprite: {fileID: 2129774172, guid: 44adc83e139c7794d9f0fd4f935fdaa9, type: 3}
-  towerAnimator: {fileID: 9100000, guid: bd1221485b113604c98911f050e94502, type: 2}
+  towerSprite: {fileID: -1991391829, guid: 03f19413c61944142a58c0bf7cc4a869, type: 3}
+  towerAnimator: {fileID: 9100000, guid: d4728ce092036f44f8647f25d6986a72, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 35
   attackSpeed: 1.75
   criticalChance: 6
   criticalMultiplier: 30
-  meleeEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 8744329751738388355, guid: 5acd778f75180a94a922b063b83792c1, type: 3}
   rangedEffectPrefab: {fileID: 0}
