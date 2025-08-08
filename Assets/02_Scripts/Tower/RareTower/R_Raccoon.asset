@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Raccoon
   towerGrade: 1
-  towerSprite: {fileID: 2005073973, guid: aafeae34d6ebf864c99b29303e5fa29c, type: 3}
-  towerAnimator: {fileID: 9100000, guid: ffcecb1800b886b4980d7c90e419c69f, type: 2}
+  towerSprite: {fileID: -1196083385, guid: fb7cca2308ecd474e802f359d624166f, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 692de79d0e33b274dbb334b142370978, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 10
   attackSpeed: 1
   criticalChance: 5
   criticalMultiplier: 15
-  meleeEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 4112533191635947356, guid: 3934e848a762464409559f1d0521fcbc, type: 3}
   rangedEffectPrefab: {fileID: 0}

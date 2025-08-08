@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Flamingo
   towerGrade: 1
-  towerSprite: {fileID: -953083028, guid: 5db550e398a13c141a6eeb5421d57d59, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 735cbf4db2040c54dab208728c867bf0, type: 2}
+  towerSprite: {fileID: -769869677, guid: 1e34b1bfaaf277646b5ca76261ff91a0, type: 3}
+  towerAnimator: {fileID: 9100000, guid: b34f7853bc245bd4a86563c2e7928bda, type: 2}
   attackRange: 4
   isLongDistance: 1
   damage: 7
@@ -23,4 +23,4 @@ MonoBehaviour:
   criticalChance: 4
   criticalMultiplier: 15
   meleeEffectPrefab: {fileID: 0}
-  rangedEffectPrefab: {fileID: 0}
+  rangedEffectPrefab: {fileID: 4501950814948484618, guid: d8ac6f2a8ea3c564da98e4d2f35e4983, type: 3}

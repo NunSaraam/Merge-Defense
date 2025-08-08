@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Kangaroo
   towerGrade: 1
-  towerSprite: {fileID: -2063770262, guid: b5621735527c12949b3e00f8d4e7a584, type: 3}
-  towerAnimator: {fileID: 9100000, guid: 93eef33b1ae5cc249afe996dee8b3fd7, type: 2}
+  towerSprite: {fileID: -521493334, guid: 91d51e65536afd8478f6f812be700dc0, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 9fdf3a1b6d0b40f4289351985a912f26, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 13
   attackSpeed: 1
   criticalChance: 5
   criticalMultiplier: 15
-  meleeEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 6350847285379818304, guid: aab1accca317ecc4e96890267868fcb3, type: 3}
   rangedEffectPrefab: {fileID: 0}

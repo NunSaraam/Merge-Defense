@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1c8a77084d847bb43abbdb298be56057
+guid: a79a709f8c8bea748998b12cc2592096
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rino_A_0
+      name: Boss_I_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 1024
+        x: 175
+        y: 117
+        width: 737
+        height: 1345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47eca72668f9b9947885dadff0cbb838
-      internalID: -1136732458
+      spriteID: f1e36d93deffbf24a981045ec74db9d5
+      internalID: 1868782128
       vertices: []
       indices: 
       edges: []
@@ -120,7 +120,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: dd4a1138e9657bb4db047856dc8c8500
+    spriteID: f551960112d84b24fbc5ca72c80f8b08
     internalID: 0
     vertices: []
     indices: 
@@ -128,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Rino_A_0: -1136732458
+      Boss_I_0: 1868782128
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

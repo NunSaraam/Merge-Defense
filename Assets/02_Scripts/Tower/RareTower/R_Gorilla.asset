@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Gorilla
   towerGrade: 1
-  towerSprite: {fileID: -170833326, guid: 36486cb06b5cd8e4abef1d54c77dd903, type: 3}
-  towerAnimator: {fileID: 9100000, guid: d84291ac96f904d4d9cfdf844958c317, type: 2}
+  towerSprite: {fileID: -865024447, guid: ccbd55dfd6c05764bb0ad297f0b8f4e8, type: 3}
+  towerAnimator: {fileID: 9100000, guid: 44d8e2ee42dbcae4dab73379fcf23267, type: 2}
   attackRange: 1
   isLongDistance: 0
   damage: 20
   attackSpeed: 1
   criticalChance: 5
   criticalMultiplier: 15
-  meleeEffectPrefab: {fileID: 0}
+  meleeEffectPrefab: {fileID: 6350847285379818304, guid: aab1accca317ecc4e96890267868fcb3, type: 3}
   rangedEffectPrefab: {fileID: 0}
