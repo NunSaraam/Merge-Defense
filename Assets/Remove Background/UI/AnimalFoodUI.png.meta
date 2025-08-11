@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f4bd28910edf86f40bc42deef164bb9d
+guid: 41dd042ba308ddf4c8068c3566748110
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screaming_I_0
+      name: AnimalFoodUI_0
       rect:
         serializedVersion: 2
-        x: 359
-        y: 84
-        width: 468
-        height: 817
+        x: 147
+        y: 73
+        width: 722
+        height: 870
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bd9aca30d384b94394e735af600409c
-      internalID: 273212851
+      spriteID: 6b06107dac1ab454a96e519457298284
+      internalID: 2045570707
       vertices: []
       indices: 
       edges: []
@@ -120,7 +120,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f7c755608b1f76242ab8d2715df8433d
+    spriteID: 4bebd7f2b2fbf60429a256bf8b559ec9
     internalID: 0
     vertices: []
     indices: 
@@ -128,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Screaming_I_0: 273212851
+      AnimalFoodUI_0: 2045570707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

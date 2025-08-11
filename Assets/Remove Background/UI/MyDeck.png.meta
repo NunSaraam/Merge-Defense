@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f4bd28910edf86f40bc42deef164bb9d
+guid: 7ce490676c9289e42ac7a71edcd6f41e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screaming_I_0
+      name: MyDeck_0
       rect:
         serializedVersion: 2
-        x: 359
-        y: 84
-        width: 468
-        height: 817
+        x: 136
+        y: 703
+        width: 753
+        height: 230
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bd9aca30d384b94394e735af600409c
-      internalID: 273212851
+      spriteID: 2959876f5f4b0a442b3fb37928fb9087
+      internalID: 1401557679
       vertices: []
       indices: 
       edges: []
@@ -120,7 +120,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f7c755608b1f76242ab8d2715df8433d
+    spriteID: 7bedc0e3ecc4d3a43b8e77a4fbe41934
     internalID: 0
     vertices: []
     indices: 
@@ -128,7 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Screaming_I_0: 273212851
+      MyDeck_0: 1401557679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

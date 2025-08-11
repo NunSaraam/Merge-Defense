@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4325119839030763528}
   - component: {fileID: 2132346414812714868}
   - component: {fileID: -7157272776268983329}
+  - component: {fileID: -4069308847539947640}
   m_Layer: 0
   m_Name: TrashEnemy
   m_TagString: Enemy
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.25, y: 2.7}
+    oldSize: {x: 3.2142856, y: 3.857143}
     newSize: {x: 2.25, y: 2.7}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -185,3 +186,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+--- !u!95 &-4069308847539947640
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3665967754543765711}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1d57b1929ecca144b9f27aa0a8a7618a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
