@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a79a709f8c8bea748998b12cc2592096
+guid: 5304b53c3e6004c48b16076002f4da0c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,22 +97,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss_I_0
+      name: Augmentation_1
       rect:
         serializedVersion: 2
-        x: 175
-        y: 117
-        width: 737
-        height: 1345
+        x: 143
+        y: 83
+        width: 389
+        height: 674
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1e36d93deffbf24a981045ec74db9d5
-      internalID: 1868782128
+      spriteID: daa72f0e6b5d7364cb52d0215e47a509
+      internalID: -1770102554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Augmentation_2
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 83
+        width: 393
+        height: 675
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc56e2d45f7e494bb45084369b08bb4
+      internalID: 958797389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Augmentation_3
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 83
+        width: 408
+        height: 674
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a7758ae4fe2fc46993bcc7f9e6a438
+      internalID: -63087203
       vertices: []
       indices: 
       edges: []
@@ -120,7 +162,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f551960112d84b24fbc5ca72c80f8b08
+    spriteID: d12f70306d5dab64097f5241394a1103
     internalID: 0
     vertices: []
     indices: 
@@ -128,7 +170,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Boss_I_0: 1868782128
+      Augmentation_0: -1073805672
+      Augmentation_1: -1770102554
+      Augmentation_2: 958797389
+      Augmentation_3: -63087203
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
